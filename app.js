@@ -31,10 +31,10 @@
     // Genres shown in pairs as color-blocked bands. "block" gets a solid color + inset photo,
     // "photo" fills its half edge to edge.
     bands: [
-      { genre: "landscape",    style: "block", color: "var(--mustard)", inset: "landscape/goreme-sunrise" },
+      { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/goreme-sunrise" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
       { genre: "street",       style: "photo", image: "street/istanbul-street-view-2" },
-      { genre: "nature",       style: "block", color: "var(--rust)", inset: "nature/cattle-egret" },
+      { genre: "nature",       style: "block", color: "var(--teal)", inset: "nature/cattle-egret" },
     ],
     // Selected work mosaic (spread across 4 staggered columns, left to right).
     mosaic: [
