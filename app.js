@@ -34,7 +34,7 @@
       { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/goreme-sunrise" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
       { genre: "street",       style: "photo", image: "street/istanbul-street-view-2" },
-      { genre: "nature",       style: "block", color: "var(--rust)", inset: "nature/cattle-egret" },
+      { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/cattle-egret" },
     ],
     // Selected work mosaic (spread across 4 staggered columns, left to right).
     mosaic: [
