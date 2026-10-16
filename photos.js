@@ -1047,11 +1047,35 @@ window.GALLERY = {
  "featured": [
   {
    "genre": "featured",
-   "title": "Art by Stjepko",
-   "src": "photos/featured/art-by-stjepko.jpg",
-   "thumb": "photos/featured/thumb/art-by-stjepko.jpg",
+   "title": "After Dark",
+   "src": "photos/featured/after-dark.jpg",
+   "thumb": "photos/featured/thumb/after-dark.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "featured",
+   "title": "Alpine Sun",
+   "src": "photos/featured/alpine-sun.jpg",
+   "thumb": "photos/featured/thumb/alpine-sun.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "featured",
+   "title": "Bell Tower",
+   "src": "photos/featured/bell-tower.jpg",
+   "thumb": "photos/featured/thumb/bell-tower.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Blue Cave Glow",
+   "src": "photos/featured/blue-cave-glow.jpg",
+   "thumb": "photos/featured/thumb/blue-cave-glow.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "featured",
@@ -1063,11 +1087,19 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Cappadocia Rocks",
-   "src": "photos/featured/cappadocia-rocks.jpg",
-   "thumb": "photos/featured/thumb/cappadocia-rocks.jpg",
+   "title": "Blue Hour Skyline",
+   "src": "photos/featured/blue-hour-skyline.jpg",
+   "thumb": "photos/featured/thumb/blue-hour-skyline.jpg",
    "w": 2048,
    "h": 1365
+  },
+  {
+   "genre": "featured",
+   "title": "City Lights",
+   "src": "photos/featured/city-lights.jpg",
+   "thumb": "photos/featured/thumb/city-lights.jpg",
+   "w": 1365,
+   "h": 2048
   },
   {
    "genre": "featured",
@@ -1079,22 +1111,6 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Croatian Flag",
-   "src": "photos/featured/croatian-flag.jpg",
-   "thumb": "photos/featured/thumb/croatian-flag.jpg",
-   "w": 1638,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Croissants",
-   "src": "photos/featured/croissants.jpg",
-   "thumb": "photos/featured/thumb/croissants.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
    "title": "David",
    "src": "photos/featured/david.jpg",
    "thumb": "photos/featured/thumb/david.jpg",
@@ -1103,25 +1119,9 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Florence Duomo",
-   "src": "photos/featured/florence-duomo.jpg",
-   "thumb": "photos/featured/thumb/florence-duomo.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Gasoline Grill",
-   "src": "photos/featured/gasoline-grill.jpg",
-   "thumb": "photos/featured/thumb/gasoline-grill.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Hanging Pots",
-   "src": "photos/featured/hanging-pots.jpg",
-   "thumb": "photos/featured/thumb/hanging-pots.jpg",
+   "title": "Eiffel Tower Blue Hour",
+   "src": "photos/featured/eiffel-tower-blue-hour.jpg",
+   "thumb": "photos/featured/thumb/eiffel-tower-blue-hour.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -1135,43 +1135,83 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Mountain at Dusk",
-   "src": "photos/featured/mountain-at-dusk.jpg",
-   "thumb": "photos/featured/thumb/mountain-at-dusk.jpg",
+   "title": "Lone Sail",
+   "src": "photos/featured/lone-sail.jpg",
+   "thumb": "photos/featured/thumb/lone-sail.jpg",
    "w": 1365,
    "h": 2048
   },
   {
    "genre": "featured",
-   "title": "Night Square",
-   "src": "photos/featured/night-square.jpg",
-   "thumb": "photos/featured/thumb/night-square.jpg",
+   "title": "Night Corridor",
+   "src": "photos/featured/night-corridor.jpg",
+   "thumb": "photos/featured/thumb/night-corridor.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "featured",
-   "title": "Painted Ceiling",
-   "src": "photos/featured/painted-ceiling.jpg",
-   "thumb": "photos/featured/thumb/painted-ceiling.jpg",
+   "title": "One World Trade",
+   "src": "photos/featured/one-world-trade.jpg",
+   "thumb": "photos/featured/thumb/one-world-trade.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Paris in Mono",
+   "src": "photos/featured/paris-in-mono.jpg",
+   "thumb": "photos/featured/thumb/paris-in-mono.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Platform at Dusk",
+   "src": "photos/featured/platform-at-dusk.jpg",
+   "thumb": "photos/featured/thumb/platform-at-dusk.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "featured",
-   "title": "Red Gingham",
-   "src": "photos/featured/red-gingham.jpg",
-   "thumb": "photos/featured/thumb/red-gingham.jpg",
+   "title": "Sailboat",
+   "src": "photos/featured/sailboat.jpg",
+   "thumb": "photos/featured/thumb/sailboat.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "featured",
-   "title": "SoHo",
-   "src": "photos/featured/soho.jpg",
-   "thumb": "photos/featured/thumb/soho.jpg",
-   "w": 2048,
-   "h": 1365
+   "title": "Sea Cliffs",
+   "src": "photos/featured/sea-cliffs.jpg",
+   "thumb": "photos/featured/thumb/sea-cliffs.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Statue and Sky",
+   "src": "photos/featured/statue-and-sky.jpg",
+   "thumb": "photos/featured/thumb/statue-and-sky.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Street Lamp",
+   "src": "photos/featured/street-lamp.jpg",
+   "thumb": "photos/featured/thumb/street-lamp.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Swim Ladder",
+   "src": "photos/featured/swim-ladder.jpg",
+   "thumb": "photos/featured/thumb/swim-ladder.jpg",
+   "w": 1365,
+   "h": 2048
   },
   {
    "genre": "featured",
@@ -1183,9 +1223,9 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Window Cat",
-   "src": "photos/featured/window-cat.jpg",
-   "thumb": "photos/featured/thumb/window-cat.jpg",
+   "title": "Walkway",
+   "src": "photos/featured/walkway.jpg",
+   "thumb": "photos/featured/thumb/walkway.jpg",
    "w": 1365,
    "h": 2048
   }

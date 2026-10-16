@@ -21,28 +21,28 @@
   const PICKS = {
     // Scattered collage next to the headline. Position/size are % of the collage box.
     collage: [
-      { key: "architecture/eiffel-tower-dusk",          x: 0,  y: 6,  w: 32, h: 52 },
-      { key: "landscape/cappadocia-hot-air-balloons-1", x: 28, y: 0,  w: 56, h: 36 },
-      { key: "featured/florence-duomo",                 x: 70, y: 22, w: 30, h: 40, round: true },
-      { key: "featured/art-by-stjepko",                 x: 36, y: 40, w: 26, h: 46 },
-      { key: "featured/blue-cave",                      x: 4,  y: 64, w: 36, h: 30 },
-      { key: "featured/walk-signal",                    x: 70, y: 66, w: 20, h: 32 },
+      { key: "featured/eiffel-tower-blue-hour", x: 0,  y: 6,  w: 32, h: 52 },
+      { key: "featured/blue-cave-glow",         x: 28, y: 0,  w: 56, h: 36 },
+      { key: "featured/lone-sail",              x: 70, y: 22, w: 30, h: 40, round: true },
+      { key: "featured/one-world-trade",        x: 36, y: 40, w: 26, h: 46 },
+      { key: "featured/sailboat",               x: 4,  y: 64, w: 36, h: 30 },
+      { key: "featured/street-lamp",            x: 70, y: 66, w: 20, h: 32 },
     ],
     // Genres shown in pairs as color-blocked bands. "block" gets a solid color + inset photo,
     // "photo" fills its half edge to edge.
     bands: [
-      { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/goreme-sunrise" },
+      { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/alta-badia-5" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
-      { genre: "street",       style: "photo", image: "street/istanbul-street-view-2" },
-      { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/cattle-egret" },
+      { genre: "street",       style: "photo", image: "street/split-street-view-3" },
+      { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/blue-morpho-butterfly-1" },
     ],
     // Selected work mosaic (spread across 4 staggered columns, left to right).
     mosaic: [
-      "featured/david", "landscape/cappadocia-hot-air-balloons-3", "featured/hanging-pots", "featured/croissants",
-      "featured/window-cat", "architecture/split-dusk", "featured/cliff-jump", "featured/hexagon-lights",
-      "featured/croatian-flag", "featured/soho", "nature/peaches", "street/musee-du-louvre-1",
-      "featured/painted-ceiling", "featured/gasoline-grill", "featured/night-square", "featured/red-gingham",
-      "architecture/rome-statuary", "featured/mountain-at-dusk", "street/west-village", "featured/cappadocia-rocks",
+      "featured/swim-ladder", "architecture/barbican-estate-1", "featured/statue-and-sky", "featured/night-corridor",
+      "featured/sea-cliffs", "featured/paris-in-mono", "architecture/split-dusk", "featured/bell-tower",
+      "featured/blue-hour-skyline", "featured/cliff-jump", "featured/walkway", "landscape/dubrovnik-old-town",
+      "featured/david", "architecture/london-cityscape-3", "featured/city-lights", "featured/blue-cave",
+      "featured/platform-at-dusk", "featured/hexagon-lights", "featured/alpine-sun", "featured/walk-signal",
     ],
     // Circles strip: [place name, photo]
     places: [
