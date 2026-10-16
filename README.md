@@ -51,7 +51,7 @@ Then open http://localhost:8765.
    ```
 
 3. **Turn on Pages.** In the repository, open **Settings → Pages**. Under *Build and deployment*, choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
-4. **Add your domain.** On the same page, enter your domain under *Custom domain* and save. This creates a `CNAME` file in the repository; run `git pull` afterwards so your copy has it too.
+4. **Add your domain.** On the same page, enter `connormallonphotography.com` under *Custom domain* and save. (The `CNAME` file in this folder already holds it.)
 5. **Point DNS at GitHub.** At your domain registrar (or in Netlify DNS, if Netlify manages your domain's nameservers), replace the Netlify records with:
 
    | Type | Name | Value |
