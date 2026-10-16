@@ -17,7 +17,9 @@ images/ is your source folder. One subfolder per genre:
       Landscape/
         Alta Badia (1).jpg
 
-Each subfolder becomes a tab on the site. The script then:
+Each subfolder becomes a genre (with its own gallery page). Photos in
+images/_featured/ are extras for the home page collage and mosaic and don't
+get a genre. The script then:
   * writes web-optimised copies to  photos/<genre>/<name>.jpg
   * writes small grid thumbnails to photos/<genre>/thumb/<name>.jpg
   * writes photos.js, the list of photos the site reads
@@ -61,24 +63,9 @@ GENRE_BLURBS = {
     "Nature": "Wildlife, flowers and the small things worth stopping for.",
 }
 
-# Photos used in the full-screen slideshow on the home page ("Folder/File.jpg").
-# Wide (landscape-orientation) photos work best.
-HERO = [
-    "Landscape/Cappadocia Hot Air Balloons (1).jpg",
-    "Architecture/Tower Bridge.jpg",
-    "Landscape/Nevis Coast (1).jpg",
-    "Landscape/Vietri Sul Mare (1).jpg",
-    "Landscape/Croatia Coast (1).jpg",
-    "Landscape/Alta Badia (1).jpg",
-]
-
-# Cover photo for each genre's card on the home page (default: first photo).
-COVERS = {
-    "Landscape": "Cappadocia Hot Air Balloons (2).jpg",
-    "Architecture": "Eiffel Tower Dusk.jpg",
-    "Street View": "Istanbul Street View (2).jpg",
-    "Nature": "Blue Morpho Butterfly (2).jpg",
-}
+# Extra photos for the home page collage and mosaic that don't belong to a genre tab.
+# Folders starting with "_" are never made into genres.
+FEATURED_FOLDER = "_featured"
 
 FULL_SIZE = 2048     # longest edge of the lightbox image, px
 THUMB_SIZE = 900     # longest edge of the grid thumbnail, px
@@ -123,64 +110,65 @@ def fresh(src, dest):
     return os.path.exists(dest) and os.path.getmtime(dest) >= os.path.getmtime(src)
 
 
+def process_folder(src_dir, out_slug, written):
+    """Make web copies + thumbnails for every photo in src_dir; return their data."""
+    files = sorted((f for f in os.listdir(src_dir)
+                    if os.path.splitext(f)[1].lower() in IMG_EXT),
+                   key=lambda f: nfc(f).lower())
+    os.makedirs(os.path.join(OUT_DIR, out_slug, "thumb"), exist_ok=True)
+    items, used = [], set()
+    for f in files:
+        src = os.path.join(src_dir, f)
+        base = slug(os.path.splitext(f)[0]) or "photo"
+        name, n = base, 2
+        while name in used:
+            name, n = f"{base}-{n}", n + 1
+        used.add(name)
+
+        full_rel = f"photos/{out_slug}/{name}.jpg"
+        thumb_rel = f"photos/{out_slug}/thumb/{name}.jpg"
+        full, thumb = os.path.join(HERE, full_rel), os.path.join(HERE, thumb_rel)
+        if not fresh(src, full):
+            # Already a web-sized JPEG? Copy it untouched (re-encoding only adds bytes).
+            if (os.path.splitext(f)[1].lower() in {".jpg", ".jpeg"}
+                    and max(dimensions(src)) <= FULL_SIZE):
+                shutil.copy2(src, full)
+            else:
+                sips(src, full, FULL_SIZE, FULL_QUALITY)
+        if not fresh(src, thumb):
+            sips(src, thumb, THUMB_SIZE, THUMB_QUALITY)
+        written.update({full, thumb})
+
+        w, h = dimensions(full)
+        items.append({"genre": out_slug, "title": title(f), "src": full_rel,
+                      "thumb": thumb_rel, "w": w, "h": h})
+    return items
+
+
 def main():
     if shutil.which("sips") is None:
         sys.exit("This script needs macOS (it uses the built-in `sips` tool).")
     if not os.path.isdir(IMAGES_DIR):
         sys.exit("No 'images' folder found. Create images/<Genre>/ and add photos.")
 
-    folders = [nfc(d) for d in os.listdir(IMAGES_DIR)
-               if os.path.isdir(os.path.join(IMAGES_DIR, d)) and not d.startswith(".")]
-    real_name = {nfc(d): d for d in os.listdir(IMAGES_DIR)}
+    real_name = {nfc(d): d for d in os.listdir(IMAGES_DIR)
+                 if os.path.isdir(os.path.join(IMAGES_DIR, d)) and not d.startswith(".")}
+    folders = [d for d in real_name if not d.startswith("_")]
     order = [g for g in GENRE_ORDER if g in folders] + sorted(set(folders) - set(GENRE_ORDER))
 
-    genres, photos, written, hero_keys = [], [], set(), {}
+    genres, photos, written = [], [], set()
     for folder in order:
         label = GENRE_LABELS.get(folder, folder)
-        gslug = slug(label)
-        src_dir = os.path.join(IMAGES_DIR, real_name[folder])
-        files = sorted((f for f in os.listdir(src_dir)
-                        if os.path.splitext(f)[1].lower() in IMG_EXT),
-                       key=lambda f: nfc(f).lower())
-        if not files:
+        items = process_folder(os.path.join(IMAGES_DIR, real_name[folder]), slug(label), written)
+        if not items:
             continue
-        os.makedirs(os.path.join(OUT_DIR, gslug, "thumb"), exist_ok=True)
+        photos += items
+        genres.append({"slug": slug(label), "label": label,
+                       "blurb": GENRE_BLURBS.get(folder, ""), "count": len(items)})
 
-        cover = None
-        used = set()
-        for f in files:
-            src = os.path.join(src_dir, f)
-            base = slug(os.path.splitext(f)[0]) or "photo"
-            name, n = base, 2
-            while name in used:
-                name, n = f"{base}-{n}", n + 1
-            used.add(name)
-
-            full_rel = f"photos/{gslug}/{name}.jpg"
-            thumb_rel = f"photos/{gslug}/thumb/{name}.jpg"
-            full, thumb = os.path.join(HERE, full_rel), os.path.join(HERE, thumb_rel)
-            if not fresh(src, full):
-                # Already a web-sized JPEG? Copy it untouched (re-encoding only adds bytes).
-                if (os.path.splitext(f)[1].lower() in {".jpg", ".jpeg"}
-                        and max(dimensions(src)) <= FULL_SIZE):
-                    shutil.copy2(src, full)
-                else:
-                    sips(src, full, FULL_SIZE, FULL_QUALITY)
-            if not fresh(src, thumb):
-                sips(src, thumb, THUMB_SIZE, THUMB_QUALITY)
-            written.update({full, thumb})
-
-            w, h = dimensions(full)
-            key = f"{folder}/{nfc(f)}"
-            photo = {"genre": gslug, "title": title(f), "src": full_rel,
-                     "thumb": thumb_rel, "w": w, "h": h}
-            photos.append(photo)
-            hero_keys[key] = full_rel
-            if cover is None or nfc(f) == nfc(COVERS.get(folder, "")):
-                cover = thumb_rel
-
-        genres.append({"slug": gslug, "label": label, "blurb": GENRE_BLURBS.get(folder, ""),
-                       "cover": cover, "count": len(files)})
+    featured = []
+    if FEATURED_FOLDER in real_name:
+        featured = process_folder(os.path.join(IMAGES_DIR, real_name[FEATURED_FOLDER]), "featured", written)
 
     # Remove outputs for photos that were deleted or renamed in images/
     for root, _dirs, files in os.walk(OUT_DIR):
@@ -194,19 +182,14 @@ def main():
             if not os.listdir(p):
                 os.rmdir(p)
 
-    # Hero slideshow keeps the order given in HERO
-    hero = [hero_keys[nfc(k)] for k in HERO if nfc(k) in hero_keys]
-    for k in HERO:
-        if nfc(k) not in hero_keys:
-            print(f"Warning: hero photo not found: {k}")
-    data = {"hero": hero, "genres": genres, "photos": photos}
+    data = {"genres": genres, "photos": photos, "featured": featured}
     with open(DATA_FILE, "w", encoding="utf-8") as fh:
         fh.write("// Generated by build_gallery.py. Do not edit by hand.\n")
         fh.write("window.GALLERY = ")
         json.dump(data, fh, ensure_ascii=False, indent=1)
         fh.write(";\n")
 
-    print(f"Built {len(photos)} photos across {len(genres)} genres: "
+    print(f"Built {len(photos)} photos across {len(genres)} genres, plus {len(featured)} featured: "
           + ", ".join(f"{g['label']} ({g['count']})" for g in genres))
 
 
