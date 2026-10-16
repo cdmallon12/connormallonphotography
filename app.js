@@ -22,12 +22,15 @@
 
   // ---------- Home: collections ----------
   $("#totalCount").textContent = `${photos.length} photographs`;
-  $("#collectionGrid").innerHTML = genres.map((g) => `
+  $("#collectionGrid").innerHTML = genres.map((g, i) => `
     <a class="collection" href="#/${g.slug}">
       <img src="${g.cover}" alt="" loading="lazy" />
       <div class="meta">
-        <h3>${g.label}</h3>
-        <span class="count">${g.count} photos <span class="arrow">→</span></span>
+        <span class="num">${String(i + 1).padStart(2, "0")}</span>
+        <div class="bottom">
+          <h3>${g.label}</h3>
+          <span class="count">${g.count} photos <span class="arrow">→</span></span>
+        </div>
       </div>
     </a>`).join("");
 
