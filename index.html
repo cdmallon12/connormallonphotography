@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0b0b0b" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,10 +19,8 @@
 <!-- ================= HEADER ================= -->
 <header class="site-header" id="header">
   <a class="brand" href="#/">Connor Mallon</a>
-  <nav class="nav" aria-label="Sections">
-    <a href="#/work" data-route="work">Work</a>
-    <a href="#/selected" data-route="selected">Selected</a>
-    <a href="#/places" data-route="places">Places</a>
+  <nav class="nav" id="nav" aria-label="Sections">
+    <!-- Genre tabs are added from photos.js -->
     <a href="#/about" data-route="about">About</a>
     <a href="#/contact" data-route="contact" class="pill">Let's talk</a>
   </nav>
@@ -30,56 +28,39 @@
 
 <main id="app">
 
-  <!-- ================= HOME (one long page) ================= -->
+  <!-- ================= HOME ================= -->
   <div class="view" data-view="home">
 
-    <!-- Intro: headline + collage -->
-    <section class="intro" id="top">
-      <div class="intro-text">
-        <p class="kicker reveal-line"><span>Photography · Chicago</span></p>
-        <!-- EDIT ME: headline lines -->
-        <h1 class="mega">
-          <span class="reveal-line"><span>Landscapes. Streets.</span></span>
-          <span class="reveal-line"><span>Architecture. Nature.</span></span>
-          <span class="reveal-line"><span>Life through <span class="hl">my lens.</span></span></span>
-        </h1>
-        <p class="intro-note reveal-line"><span>I photograph the places I travel: the light, the streets and the small moments in between.</span></p>
-      </div>
-      <div class="collage" id="collage" aria-hidden="true"></div>
+    <!-- Intro: type only -->
+    <section class="intro">
+      <!-- EDIT ME: headline lines -->
+      <h1 class="mega">
+        <span class="reveal-line"><span>Landscapes. Streets.</span></span>
+        <span class="reveal-line"><span>Architecture. Nature.</span></span>
+        <span class="reveal-line"><span>Life through my lens.</span></span>
+      </h1>
+      <p class="note intro-note reveal-line"><span>I photograph the places I travel: the light, the streets and the small moments in between.</span></p>
     </section>
 
     <!-- Genres as color-blocked bands -->
-    <section id="work" class="work">
-      <div class="section-label"><span>01</span> The work</div>
-      <div id="bands"></div>
-    </section>
+    <section id="work"><div id="bands"></div></section>
 
-    <!-- Selected work: staggered mosaic -->
-    <section id="selected" class="selected">
-      <div class="selected-head">
-        <div>
-          <div class="section-label"><span>02</span> Selected</div>
-          <h2 class="mega reveal">Selected <span class="hl">work</span></h2>
-        </div>
-        <p class="side-note reveal">A few favourites from every collection. Click any photo to see it full size.</p>
+    <!-- Selected work: headline overlapping two photos -->
+    <section class="recent" id="selected">
+      <h2 class="mega recent-title reveal">Selected<br />work</h2>
+      <a class="r-big reveal" id="recentBig" href="#"></a>
+      <a class="r-small reveal" id="recentSmall" href="#"></a>
+      <div class="note recent-note reveal">
+        <p>A few favourites. Each collection has the best of the rest.</p>
+        <ul id="recentLinks"></ul>
       </div>
-      <div class="mosaic" id="mosaic"></div>
-    </section>
-
-    <!-- Places: circles -->
-    <section id="places" class="places">
-      <div class="places-head">
-        <div class="section-label"><span>03</span> Places</div>
-        <h2 class="mega reveal">Where I've <em class="serif">been</em></h2>
-      </div>
-      <div class="circles"><div class="circles-track" id="circles"></div></div>
     </section>
 
     <!-- About -->
     <section id="about" class="about">
       <div class="about-photo reveal"><img src="assets/bio.jpg" alt="Connor Mallon holding a camera" loading="lazy" /></div>
       <div class="about-text reveal">
-        <div class="section-label"><span>04</span> About</div>
+        <p class="kicker">About</p>
         <!-- EDIT ME: bio -->
         <h2 class="mega">Hi, I'm Connor.</h2>
         <p>I'm a student based in Chicago, trying to share my perspective through photography. I enjoy
@@ -87,16 +68,16 @@
            commissioned shoots and personal projects across the country.</p>
         <p>All photos in my portfolio are available for purchase and prints can be arranged upon
            request. Feel free to get in touch for more information.</p>
-        <a class="button dark" href="#/contact">Get in touch</a>
+        <a class="link-line" href="#/contact">Get in touch</a>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="contact">
       <div class="contact-intro">
-        <div class="section-label"><span>05</span> Contact</div>
-        <h2 class="mega reveal">Let's <span class="hl">talk.</span></h2>
-        <p class="reveal">Prints, bookings and inquiries. Send a message and I'll get back to you.</p>
+        <p class="kicker">Contact</p>
+        <h2 class="mega reveal">Let's talk.</h2>
+        <p class="note reveal">Prints, bookings and inquiries. Send a message and I'll get back to you.</p>
       </div>
       <!-- Formspree form: messages go to the email on your Formspree account. -->
       <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mwvgenyy" method="POST">
@@ -109,20 +90,22 @@
     </section>
   </div>
 
-  <!-- ================= FULL GALLERY FOR ONE GENRE ================= -->
-  <div class="view" data-view="gallery">
-    <section class="gallery-page">
-      <a class="back" href="#/work">← All work</a>
-      <div class="gallery-head">
-        <div>
-          <p class="kicker" id="galleryCount"></p>
-          <h1 class="mega" id="galleryTitle"></h1>
+  <!-- ================= GENRE TAB: curated best + full collection ================= -->
+  <div class="view" data-view="genre">
+    <section class="genre-page">
+      <div class="genre-head">
+        <h1 class="mega" id="genreTitle"></h1>
+        <div class="note genre-note">
+          <p id="genreBlurb"></p>
+          <p class="count" id="genreCount"></p>
         </div>
-        <p class="side-note" id="galleryBlurb"></p>
       </div>
-      <nav class="chips" id="chips" aria-label="Collections"></nav>
-      <div class="gallery" id="gallery"></div>
-      <nav class="gallery-next" id="galleryNext"></nav>
+      <div class="best" id="best"></div>
+      <div class="all">
+        <button class="link-line" id="showAll" type="button"></button>
+        <div class="gallery" id="gallery" hidden></div>
+      </div>
+      <nav class="genre-next" id="genreNext"></nav>
     </section>
   </div>
 
@@ -131,7 +114,7 @@
 <footer class="site-footer">
   <span class="brand">Connor Mallon</span>
   <span>© <span id="year"></span> Connor Mallon. All rights reserved.</span>
-  <a href="#/contact">Inquire about prints →</a>
+  <a href="#/contact">Inquire about prints</a>
 </footer>
 
 <!-- ================= LIGHTBOX ================= -->

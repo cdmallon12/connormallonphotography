@@ -181,9 +181,9 @@ window.GALLERY = {
   },
   {
    "genre": "landscape",
-   "title": "Mjlet National Park",
-   "src": "photos/landscape/mjlet-national-park-1.jpg",
-   "thumb": "photos/landscape/thumb/mjlet-national-park-1.jpg",
+   "title": "Mljet National Park",
+   "src": "photos/landscape/mljet-national-park-1.jpg",
+   "thumb": "photos/landscape/thumb/mljet-national-park-1.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -333,9 +333,9 @@ window.GALLERY = {
   },
   {
    "genre": "architecture",
-   "title": "Buckingham Palalce Dusk",
-   "src": "photos/architecture/buckingham-palalce-dusk.jpg",
-   "thumb": "photos/architecture/thumb/buckingham-palalce-dusk.jpg",
+   "title": "Buckingham Palace Dusk",
+   "src": "photos/architecture/buckingham-palace-dusk.jpg",
+   "thumb": "photos/architecture/thumb/buckingham-palace-dusk.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -821,9 +821,9 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Surpreme Deli",
-   "src": "photos/street/surpreme-deli.jpg",
-   "thumb": "photos/street/thumb/surpreme-deli.jpg",
+   "title": "Supreme Deli",
+   "src": "photos/street/supreme-deli.jpg",
+   "thumb": "photos/street/thumb/supreme-deli.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -1047,22 +1047,6 @@ window.GALLERY = {
  "featured": [
   {
    "genre": "featured",
-   "title": "After Dark",
-   "src": "photos/featured/after-dark.jpg",
-   "thumb": "photos/featured/thumb/after-dark.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Alpine Sun",
-   "src": "photos/featured/alpine-sun.jpg",
-   "thumb": "photos/featured/thumb/alpine-sun.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
    "title": "Bell Tower",
    "src": "photos/featured/bell-tower.jpg",
    "thumb": "photos/featured/thumb/bell-tower.jpg",
@@ -1079,57 +1063,9 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Blue Cave",
-   "src": "photos/featured/blue-cave.jpg",
-   "thumb": "photos/featured/thumb/blue-cave.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Blue Hour Skyline",
-   "src": "photos/featured/blue-hour-skyline.jpg",
-   "thumb": "photos/featured/thumb/blue-hour-skyline.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "City Lights",
-   "src": "photos/featured/city-lights.jpg",
-   "thumb": "photos/featured/thumb/city-lights.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Cliff Jump",
-   "src": "photos/featured/cliff-jump.jpg",
-   "thumb": "photos/featured/thumb/cliff-jump.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "David",
-   "src": "photos/featured/david.jpg",
-   "thumb": "photos/featured/thumb/david.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
    "title": "Eiffel Tower Blue Hour",
    "src": "photos/featured/eiffel-tower-blue-hour.jpg",
    "thumb": "photos/featured/thumb/eiffel-tower-blue-hour.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Hexagon Lights",
-   "src": "photos/featured/hexagon-lights.jpg",
-   "thumb": "photos/featured/thumb/hexagon-lights.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -1167,14 +1103,6 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Platform at Dusk",
-   "src": "photos/featured/platform-at-dusk.jpg",
-   "thumb": "photos/featured/thumb/platform-at-dusk.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
    "title": "Sailboat",
    "src": "photos/featured/sailboat.jpg",
    "thumb": "photos/featured/thumb/sailboat.jpg",
@@ -1186,46 +1114,6 @@ window.GALLERY = {
    "title": "Sea Cliffs",
    "src": "photos/featured/sea-cliffs.jpg",
    "thumb": "photos/featured/thumb/sea-cliffs.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Statue and Sky",
-   "src": "photos/featured/statue-and-sky.jpg",
-   "thumb": "photos/featured/thumb/statue-and-sky.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Street Lamp",
-   "src": "photos/featured/street-lamp.jpg",
-   "thumb": "photos/featured/thumb/street-lamp.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Swim Ladder",
-   "src": "photos/featured/swim-ladder.jpg",
-   "thumb": "photos/featured/thumb/swim-ladder.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Walk Signal",
-   "src": "photos/featured/walk-signal.jpg",
-   "thumb": "photos/featured/thumb/walk-signal.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Walkway",
-   "src": "photos/featured/walkway.jpg",
-   "thumb": "photos/featured/thumb/walkway.jpg",
    "w": 1365,
    "h": 2048
   }

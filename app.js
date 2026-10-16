@@ -1,4 +1,4 @@
-// Site behaviour: one-page layout, genre galleries, lightbox, motion, contact form.
+// Site behaviour: home page, curated genre tabs, lightbox, motion, contact form.
 // Photo data comes from photos.js, which build_gallery.py generates.
 (() => {
   const { genres, photos, featured = [] } = window.GALLERY;
@@ -19,110 +19,106 @@
   // EDIT ME: which photos go where
   // =====================================================================
   const PICKS = {
-    // Scattered collage next to the headline. Position/size are % of the collage box.
-    collage: [
-      { key: "featured/eiffel-tower-blue-hour", x: 0,  y: 6,  w: 32, h: 52 },
-      { key: "featured/blue-cave-glow",         x: 28, y: 0,  w: 56, h: 36 },
-      { key: "featured/lone-sail",              x: 70, y: 22, w: 30, h: 40, round: true },
-      { key: "featured/one-world-trade",        x: 36, y: 40, w: 26, h: 46 },
-      { key: "featured/sailboat",               x: 4,  y: 64, w: 36, h: 30 },
-      { key: "featured/street-lamp",            x: 70, y: 66, w: 20, h: 32 },
-    ],
-    // Genres shown in pairs as color-blocked bands. "block" gets a solid color + inset photo,
-    // "photo" fills its half edge to edge.
+    // Home page genre bands, shown in pairs. "block" = solid color + inset photo,
+    // "photo" = photo fills its half.
     bands: [
       { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/alta-badia-5" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
       { genre: "street",       style: "photo", image: "street/split-street-view-3" },
       { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/blue-morpho-butterfly-1" },
     ],
-    // Selected work mosaic (spread across 4 staggered columns, left to right).
-    mosaic: [
-      "featured/swim-ladder", "architecture/barbican-estate-1", "featured/statue-and-sky", "featured/night-corridor",
-      "featured/sea-cliffs", "featured/paris-in-mono", "architecture/split-dusk", "featured/bell-tower",
-      "featured/blue-hour-skyline", "featured/cliff-jump", "featured/walkway", "landscape/dubrovnik-old-town",
-      "featured/david", "architecture/london-cityscape-3", "featured/city-lights", "featured/blue-cave",
-      "featured/platform-at-dusk", "featured/hexagon-lights", "featured/alpine-sun", "featured/walk-signal",
-    ],
-    // Circles strip: [place name, photo]
-    places: [
-      ["Cappadocia", "landscape/cappadocia"], ["Paris", "architecture/paris-cityscape-2"],
-      ["Istanbul", "architecture/blue-mosque"], ["London", "architecture/tower-bridge"],
-      ["Korčula", "architecture/korcula"], ["Rome", "architecture/rome-cityscape"],
-      ["Budapest", "architecture/szechenyi-chain-bridge-1"], ["Alta Badia", "landscape/alta-badia-1"],
-      ["Nevis", "landscape/nevis-coast-1"], ["New York", "architecture/new-york-city-cityscape"],
-      ["Prague", "landscape/prague-skyline"], ["Split", "architecture/split-skyline"],
-      ["Amalfi Coast", "landscape/vietri-sul-mare-2"], ["Copenhagen", "architecture/rosenborg-castle"],
-    ],
+    // Home page "Selected work": one large photo with a smaller one overlapping it.
+    recent: { big: "featured/lone-sail", small: "featured/eiffel-tower-blue-hour" },
+
+    // Each genre tab shows these first, in this order (the full collection sits under "View all").
+    best: {
+      landscape: [
+        "landscape/cappadocia-hot-air-balloons-1", "landscape/alta-badia-5", "landscape/goreme-sunrise",
+        "featured/blue-cave-glow", "landscape/dubrovnik-old-town", "landscape/cappadocia-hot-air-balloons-2",
+        "landscape/vietri-sul-mare-1", "landscape/alta-badia-4", "featured/sea-cliffs",
+        "landscape/fairy-chimneys", "landscape/florence-dusk", "featured/sailboat",
+      ],
+      architecture: [
+        "architecture/hungarian-parliament", "architecture/barbican-estate-1", "featured/one-world-trade",
+        "architecture/buckingham-palace-dusk", "architecture/manhattan-bridge", "architecture/szechenyi-chain-bridge-1",
+        "architecture/rome-statuary", "architecture/barbican-estate-2", "architecture/eiffel-tower-dusk",
+        "architecture/london-cityscape-3", "architecture/split-dusk", "featured/bell-tower",
+      ],
+      street: [
+        "street/istanbul-street-view-2", "street/split-street-view-3", "street/new-york-city-sunset",
+        "street/musee-du-louvre-1", "street/supreme-deli", "featured/night-corridor",
+        "street/vienna-street-view-2", "street/korcula-street-view-4", "street/rome-street-view",
+        "featured/paris-in-mono", "street/nevis-sunset", "street/istanbul-street-view-3",
+        "street/paris-street-view-1", "street/hagia-sophia",
+      ],
+      nature: [
+        "nature/blue-morpho-butterfly-2", "nature/balduina-sunset", "nature/cattle-egret",
+        "nature/goreme-camel", "nature/blue-morpho-butterfly-1", "nature/peaches",
+        "nature/tropical-hibiscus", "nature/vervet-monkey-1", "nature/purple-queen-bougainvillea",
+        "nature/balduina-dusk",
+      ],
+    },
   };
   // =====================================================================
 
   document.getElementById("year").textContent = new Date().getFullYear();
   const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
-  // ---------- Collage ----------
-  $("#collage").innerHTML = PICKS.collage.filter((c) => P(c.key)).map((c, i) => `
-    <div class="c${c.round ? " round" : ""}" data-depth="${(0.4 + (i % 3) * 0.35).toFixed(2)}"
-         style="left:${c.x}%;top:${c.y}%;width:${c.w}%;height:${c.h}%;z-index:${i + 1};transition-delay:${0.5 + i * 0.12}s">
-      <img src="${P(c.key).thumb}" alt="" ${i < 2 ? 'fetchpriority="high"' : 'loading="lazy"'} />
-    </div>`).join("");
+  // ---------- Nav: one tab per genre ----------
+  const nav = $("#nav");
+  const firstStatic = nav.firstElementChild;
+  genres.forEach((g) => {
+    const a = document.createElement("a");
+    a.href = `#/${g.slug}`;
+    a.dataset.route = g.slug;
+    a.textContent = g.label;
+    nav.insertBefore(a, firstStatic);
+  });
+  firstStatic.classList.add("tab-gap");
 
-  // ---------- Color-blocked bands ----------
+  // ---------- Home: color-blocked bands ----------
   const half = (b) => {
     const g = bySlug[b.genre];
     if (!g) return "";
-    const n = pad(genres.indexOf(g) + 1);
     const txt = `
       <div class="txt">
-        <span class="num">No. ${n}</span>
+        <span class="num">${pad(genres.indexOf(g) + 1)}</span>
         <h3>${g.label}</h3>
         <p>${g.blurb}</p>
         <span class="link-line">View gallery</span>
       </div>`;
     if (b.style === "block") {
       return `<a class="half block reveal" href="#/${g.slug}" style="--c:${b.color}">
-        <div class="inset"><img src="${(P(b.inset) || {}).thumb}" alt="" loading="lazy" /></div>
-        ${txt}
-        <span class="count">${g.count}</span>
+        <div class="inset"><img src="${(P(b.inset) || {}).thumb}" alt="" loading="lazy" /></div>${txt}
       </a>`;
     }
     return `<a class="half photo reveal" href="#/${g.slug}">
-      <img src="${(P(b.image) || {}).src}" alt="" loading="lazy" />
-      ${txt}
+      <img src="${(P(b.image) || {}).src}" alt="" loading="lazy" />${txt}
     </a>`;
   };
-  let bandsHtml = "";
+  let bands = "";
   for (let i = 0; i < PICKS.bands.length; i += 2) {
-    bandsHtml += `<div class="band">${half(PICKS.bands[i])}${PICKS.bands[i + 1] ? half(PICKS.bands[i + 1]) : ""}</div>`;
+    bands += `<div class="band">${half(PICKS.bands[i])}${PICKS.bands[i + 1] ? half(PICKS.bands[i + 1]) : ""}</div>`;
   }
-  $("#bands").innerHTML = bandsHtml;
+  $("#bands").innerHTML = bands;
 
-  // ---------- Selected work mosaic ----------
-  const mosaicPhotos = PICKS.mosaic.map(P).filter(Boolean);
-  const cols = [[], [], [], []];
-  mosaicPhotos.forEach((p, i) => cols[i % 4].push([p, i]));
-  $("#mosaic").innerHTML = cols.map((col, c) => `
-    <div class="col" data-speed="${[0.04, -0.06, 0.08, -0.03][c]}">
-      ${col.map(([p, i]) => `
-        <a class="reveal" href="${p.src}" data-i="${i}">
-          <img src="${p.thumb}" alt="${esc(p.title)}" width="${p.w}" height="${p.h}" loading="lazy" />
-          <span class="cap">${esc(p.title)}</span>
-        </a>`).join("")}
-    </div>`).join("");
-  $("#mosaic").addEventListener("click", (e) => {
-    const a = e.target.closest("a[data-i]");
-    if (!a) return;
-    e.preventDefault();
-    openLightbox(mosaicPhotos, +a.dataset.i);
+  // ---------- Home: selected work ----------
+  // Clicking either photo opens a slideshow of the top three from every genre.
+  const highlights = genres.flatMap((g) => (PICKS.best[g.slug] || []).slice(0, 3).map(P).filter(Boolean));
+  [["#recentBig", PICKS.recent.big], ["#recentSmall", PICKS.recent.small]].forEach(([sel, key]) => {
+    const p = P(key);
+    if (!p) return;
+    const a = $(sel);
+    a.href = p.src;
+    a.innerHTML = `<img src="${p.thumb}" alt="${esc(p.title)}" width="${p.w}" height="${p.h}" loading="lazy" />`;
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      openLightbox([p, ...highlights.filter((h) => h !== p)], 0);
+    });
   });
+  $("#recentLinks").innerHTML = genres.map((g) => `<li><a href="#/${g.slug}">${g.label} →</a></li>`).join("");
 
-  // ---------- Places circles (doubled for a seamless loop) ----------
-  const circles = PICKS.places.filter(([, k]) => P(k)).map(([name, k]) => `
-    <div class="circle"><img src="${P(k).thumb}" alt="" loading="lazy" /><span>${name}</span></div>`).join("");
-  $("#circles").innerHTML = circles + circles;
-
-  // ---------- Genre gallery page ----------
-  let current = [];
+  // ---------- Genre tab: curated best in an asymmetric layout ----------
   const lazy = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
@@ -131,110 +127,135 @@
     });
   }, { rootMargin: "600px 0px" });
 
-  function renderGallery(slug) {
+  // Alternate photos left and right on a 12-column grid. Tall photos get narrow columns,
+  // wide ones get broad columns, and right-hand photos drop lower to stagger the pair.
+  function place(list) {
+    let leftSpan = 0;
+    return list.map((p, i) => {
+      const tall = p.h > p.w;
+      const right = i % 2 === 1;
+      let span, start, drop = 0;
+      if (!right) {
+        span = tall ? 4 : 7;
+        start = 1 + (tall && i % 4 === 2 ? 1 : 0);
+        leftSpan = span + start - 1;
+      } else {
+        span = tall ? 4 : (leftSpan >= 7 ? 5 : 7);
+        start = 13 - span - (i % 4 === 3 && 13 - span - 1 > leftSpan ? 1 : 0);
+        drop = tall ? 16 : 10;
+      }
+      return { p, tall, col: `${start} / span ${span}`, drop };
+    });
+  }
+
+  let bestList = [], allList = [];
+  function renderGenre(slug) {
     const g = bySlug[slug];
     const idx = genres.indexOf(g);
-    current = photos.filter((p) => p.genre === slug);
-    $("#galleryTitle").textContent = g.label;
-    $("#galleryBlurb").textContent = g.blurb;
-    $("#galleryCount").textContent = `No. ${pad(idx + 1)} — ${g.count} photographs`;
-    $("#chips").innerHTML = genres.map((x) =>
-      `<a href="#/${x.slug}" class="${x === g ? "active" : ""}">${x.label}</a>`).join("");
+    allList = photos.filter((p) => p.genre === slug);
+    bestList = (PICKS.best[slug] || []).map(P).filter(Boolean);
+    if (!bestList.length) bestList = allList.slice(0, 12);
+
+    $("#genreTitle").textContent = g.label;
+    $("#genreBlurb").textContent = g.blurb;
+    $("#genreCount").textContent = `${pad(bestList.length)} selected · ${g.count} in the collection`;
+    $("#best").innerHTML = place(bestList).map(({ p, tall, col, drop }, i) => `
+      <figure class="reveal${tall ? " tall" : ""}" data-i="${i}" style="grid-column:${col};margin-top:${drop}vh">
+        <div class="ph"><img src="${p.thumb}" alt="${esc(p.title)}" width="${p.w}" height="${p.h}" loading="lazy" /></div>
+        <figcaption><b>${pad(i + 1)}</b>${esc(p.title)}</figcaption>
+      </figure>`).join("");
+    observeReveals($("#best"));
+
     const gallery = $("#gallery");
-    gallery.innerHTML = current.map((p, i) => `
+    gallery.hidden = true;
+    gallery.innerHTML = "";
+    $("#showAll").textContent = `View all ${g.count} photos`;
+
+    const prev = genres[idx - 1], next = genres[idx + 1] || genres[0];
+    $("#genreNext").innerHTML =
+      (prev ? `<a href="#/${prev.slug}"><small>← Previous</small><span>${prev.label}</span></a>` : "") +
+      `<a href="#/${next.slug}"><small>Next →</small><span>${next.label}</span></a>`;
+  }
+  $("#best").addEventListener("click", (e) => {
+    const f = e.target.closest("figure[data-i]");
+    if (f) openLightbox(bestList, +f.dataset.i);
+  });
+
+  // "View all": the whole collection as justified rows
+  $("#showAll").addEventListener("click", () => {
+    const gallery = $("#gallery");
+    if (!gallery.hidden) { gallery.hidden = true; $("#showAll").textContent = `View all ${allList.length} photos`; return; }
+    gallery.innerHTML = allList.map((p, i) => `
       <a class="tile" href="${p.src}" data-i="${i}" style="--r:${(p.w / p.h).toFixed(4)}">
-        <i></i><img data-src="${p.thumb}" alt="${esc(p.title)}" /><span class="cap">${esc(p.title)}</span>
+        <i></i><img data-src="${p.thumb}" alt="${esc(p.title)}" />
       </a>`).join("");
     gallery.querySelectorAll("img").forEach((img) => {
       img.onload = () => img.classList.add("loaded");
       lazy.observe(img);
     });
-    const prev = genres[idx - 1], next = genres[idx + 1] || genres[0];
-    $("#galleryNext").innerHTML =
-      (prev ? `<a href="#/${prev.slug}"><small>← Previous</small><span>${prev.label}</span></a>` : "") +
-      `<a href="#/${next.slug}"><small>Next →</small><span>${next.label}</span></a>`;
-  }
+    gallery.hidden = false;
+    $("#showAll").textContent = "Hide full collection";
+  });
   $("#gallery").addEventListener("click", (e) => {
     const tile = e.target.closest(".tile");
     if (!tile) return;
     e.preventDefault();
-    openLightbox(current, +tile.dataset.i);
+    openLightbox(allList, +tile.dataset.i);
   });
 
   // ---------- Scroll reveals ----------
   const revealer = new IntersectionObserver((entries) => {
     entries.filter((e) => e.isIntersecting).forEach((e, n) => {
-      e.target.style.transitionDelay = `${Math.min(n, 5) * 80}ms`;
+      e.target.style.transitionDelay = `${Math.min(n, 4) * 90}ms`;
       e.target.classList.add("in");
       revealer.unobserve(e.target);
     });
   }, { rootMargin: "0px 0px -8% 0px" });
-  document.querySelectorAll(".reveal").forEach((el) => revealer.observe(el));
+  function observeReveals(root) {
+    root.querySelectorAll(".reveal:not(.in)").forEach((el) => revealer.observe(el));
+  }
+  observeReveals(document);
 
-  // ---------- Motion: collage follows the mouse, columns and photos drift on scroll ----------
+  // ---------- Gentle parallax on band photos ----------
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const collageItems = [...document.querySelectorAll(".collage .c")];
-  let mx = 0, my = 0, ticking = false;
-
+  let ticking = false;
   function frame() {
     ticking = false;
     if (view !== "home") return;
-    const sy = scrollY;
-    collageItems.forEach((c) => {
-      const d = +c.dataset.depth;
-      c.style.translate = `${(mx * d * 18).toFixed(1)}px ${(my * d * 18 - sy * d * 0.12).toFixed(1)}px`;
-    });
-    document.querySelectorAll(".mosaic .col").forEach((col) => {
-      const r = col.parentElement.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > innerHeight) return;
-      col.style.transform = `translateY(${((innerHeight - r.top) * +col.dataset.speed).toFixed(1)}px)`;
-    });
-    document.querySelectorAll(".half .inset img, .half.photo > img").forEach((img) => {
+    document.querySelectorAll(".half img").forEach((img) => {
       const r = img.parentElement.getBoundingClientRect();
       if (r.bottom < 0 || r.top > innerHeight) return;
-      img.style.translate = `0 ${(((r.top + r.height / 2) / innerHeight - 0.5) * -8).toFixed(2)}%`;
+      img.style.translate = `0 ${(((r.top + r.height / 2) / innerHeight - 0.5) * -7).toFixed(2)}%`;
     });
   }
   const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
-  if (!still) {
-    addEventListener("scroll", queue, { passive: true });
-    addEventListener("mousemove", (e) => {
-      mx = e.clientX / innerWidth - 0.5;
-      my = e.clientY / innerHeight - 0.5;
-      queue();
-    });
-  }
+  if (!still) addEventListener("scroll", queue, { passive: true });
 
   // ---------- Header ----------
   const header = $("#header");
-  const updateHeader = () => header.classList.toggle("solid", view !== "home" || scrollY > 40);
+  const updateHeader = () => header.classList.toggle("solid", scrollY > 40);
   addEventListener("scroll", updateHeader, { passive: true });
 
   // ---------- Router ----------
-  // #/ home · #/work, #/about … scroll to that section · #/<genre> opens its gallery
-  const SECTIONS = ["work", "selected", "places", "about", "contact"];
+  // #/ home · #/about, #/contact scroll on the home page · #/<genre> opens that tab
   let view = "";
   function route() {
     const path = location.hash.replace(/^#\/?/, "");
-    const next = bySlug[path] ? "gallery" : "home";
-    const changed = next !== view;
+    const next = bySlug[path] ? "genre" : "home";
+    const changed = next !== view || next === "genre";
     view = next;
     document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.dataset.view === view));
-    document.querySelectorAll(".nav a").forEach((a) => a.classList.toggle("active", a.dataset.route === path));
+    nav.querySelectorAll("a").forEach((a) => a.classList.toggle("active", a.dataset.route === path));
 
-    if (view === "gallery") {
-      renderGallery(path);
+    if (view === "genre") {
+      renderGenre(path);
       document.title = `${bySlug[path].label} — ${SITE}`;
       scrollTo({ top: 0, behavior: "instant" });
     } else {
       document.title = SITE;
-      if (changed) collageItems.forEach((c) => { c.classList.remove("in"); void c.offsetWidth; c.classList.add("in"); });
-      if (SECTIONS.includes(path)) {
-        const target = document.getElementById(path);
-        requestAnimationFrame(() => scrollTo({
-          top: target.getBoundingClientRect().top + scrollY,
-          behavior: changed ? "instant" : "smooth",
-        }));
+      const target = document.getElementById(path);
+      if (target) {
+        requestAnimationFrame(() => scrollTo({ top: target.getBoundingClientRect().top + scrollY, behavior: changed ? "instant" : "smooth" }));
       } else if (changed) {
         scrollTo({ top: 0, behavior: "instant" });
       }
