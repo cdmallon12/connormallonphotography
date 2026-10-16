@@ -52,7 +52,13 @@ Then open http://localhost:8765.
 
 3. **Turn on Pages.** In the repository, open **Settings → Pages**. Under *Build and deployment*, choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
 4. **Add your domain.** On the same page, enter `connormallonphotography.com` under *Custom domain* and save. (The `CNAME` file in this folder already holds it.)
-5. **Point DNS at GitHub.** At your domain registrar (or in Netlify DNS, if Netlify manages your domain's nameservers), replace the Netlify records with:
+5. **Point DNS at GitHub.** The domain is registered at **Name.com**, but its DNS is currently run by **Netlify DNS** (nameservers `dns1–4.p09.nsone.net`). To leave Netlify completely:
+   - In Name.com → **My Domains → connormallonphotography.com → Nameservers**, switch back to Name.com's default nameservers.
+   - Then in Name.com → **DNS Records**, add the records below.
+
+   (Alternative: keep Netlify DNS and edit the records there instead, but then you can't delete your Netlify account.)
+
+   Records:
 
    | Type | Name | Value |
    | --- | --- | --- |
