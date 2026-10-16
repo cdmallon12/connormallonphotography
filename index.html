@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Connor Mallon — Photography</title>
+<meta name="description" content="Photography by Connor Mallon: landscape, architecture, street and nature from travels around the world." />
+<meta property="og:title" content="Connor Mallon — Photography" />
+<meta property="og:description" content="Life through my lens. Landscape, architecture, street and nature photography." />
+<meta property="og:image" content="photos/landscape/cappadocia-hot-air-balloons-1.jpg" />
+<meta name="theme-color" content="#0c0c0c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ================= HEADER / TABS ================= -->
+<header class="site-header" id="header">
+  <a class="brand" href="#/">Connor Mallon</a>
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <!-- Genre tabs are added from photos.js -->
+    <a href="#/about" data-route="about">About</a>
+    <a href="#/contact" data-route="contact">Contact</a>
+  </nav>
+</header>
+
+<main id="app">
+
+  <!-- ================= HOME ================= -->
+  <section class="view" data-view="home">
+    <div class="hero" id="hero">
+      <div class="hero-slides" id="heroSlides"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-text">
+        <p class="eyebrow">Photography</p>
+        <h1>Connor Mallon</h1>
+        <!-- EDIT ME: tagline -->
+        <p class="tagline">Life through my lens</p>
+      </div>
+      <a class="scroll-cue" href="#collections" aria-label="Scroll to collections"><span></span></a>
+    </div>
+
+    <div class="wrap" id="collections">
+      <div class="section-head">
+        <h2>Collections</h2>
+        <p id="totalCount"></p>
+      </div>
+      <div class="collections" id="collectionGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= GENRE PAGE ================= -->
+  <section class="view" data-view="genre">
+    <div class="wrap">
+      <div class="genre-head">
+        <p class="eyebrow" id="genreCount"></p>
+        <h1 id="genreTitle"></h1>
+        <p class="blurb" id="genreBlurb"></p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+      <nav class="genre-next" id="genreNext"></nav>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="view" data-view="about">
+    <div class="wrap about">
+      <img class="about-photo" src="assets/bio.jpg" alt="Connor Mallon holding a camera" />
+      <div class="about-text">
+        <p class="eyebrow">About</p>
+        <!-- EDIT ME: bio -->
+        <h1>Hi, I'm Connor.</h1>
+        <p>I'm a student based in Chicago, trying to share my perspective through photography. I enjoy
+           capturing everyday moments and documenting my travel around the world. My work spans
+           commissioned shoots and personal projects across the country.</p>
+        <p>All photos in my portfolio are available for purchase and prints can be arranged upon
+           request. Feel free to get in touch for more information.</p>
+        <a class="button" href="#/contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="view" data-view="contact">
+    <div class="wrap contact">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact</p>
+        <h1>Let's talk.</h1>
+        <p>For prints, bookings and inquiries, send a message and I'll get back to you.</p>
+      </div>
+      <!-- Formspree form: messages go to the email on your Formspree account. -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvgenyy" method="POST">
+        <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+        <label>Message<textarea name="message" rows="6" required></textarea></label>
+        <button class="button" type="submit">Send message</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Connor Mallon. All rights reserved.</span>
+  <a href="#/contact">Inquire about prints</a>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <figure>
+    <img id="lbImg" alt="" />
+    <figcaption><span id="lbCaption"></span><span id="lbCounter"></span></figcaption>
+  </figure>
+  <button class="lb-arrow lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+</div>
+
+<script src="photos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

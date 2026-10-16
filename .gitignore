@@ -1,0 +1,5 @@
+# Source photos stay on this computer; the site uses the copies in photos/
+images/
+_old-site/
+.claude/
+.DS_Store
