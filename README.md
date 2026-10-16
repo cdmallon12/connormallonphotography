@@ -7,9 +7,9 @@ A static photography portfolio hosted on GitHub Pages.
 | Path | What it is |
 | --- | --- |
 | `images/<Genre>/` | Your original photos. Each folder becomes a genre with its own gallery page. Stays on your computer (not uploaded). |
-| `images/_featured/` | Extra photos (from your Export folder) used in the home page collage and mosaic. The filename becomes the caption. |
+| `images/_featured/` | Extra photos (from your Export folder) that can be used anywhere in `PICKS`, including the genre tabs. The filename becomes the caption. |
 | `build_gallery.py` | Turns `images/` into `photos/` and `photos.js`. Settings (genre order, names, blurbs) are at the top. |
-| `app.js` → `PICKS` | Which photos appear in the collage, color bands, Selected work mosaic and Places circles. |
+| `app.js` → `PICKS` | Which photos appear in the home page bands and Selected work, and the hand-picked best photos shown first on each genre tab. |
 | `photos/`, `photos.js` | Generated. Don't edit by hand. |
 | `index.html`, `styles.css`, `app.js` | The site. Bio and tagline are in `index.html`; colors and fonts are at the top of `styles.css`. |
 | `assets/bio.jpg` | Photo on the About page. |
@@ -17,7 +17,7 @@ A static photography portfolio hosted on GitHub Pages.
 
 ## Adding or changing photos
 
-1. Put photos in `images/<Genre>/` (a new folder makes a new genre), or in `images/_featured/` for home page extras. To place a photo somewhere on the home page, add it to `PICKS` in `app.js` as `"<genre>/<file-name>"`, e.g. `"featured/blue-cave"`.
+1. Put photos in `images/<Genre>/` (a new folder makes a new genre), or in `images/_featured/` for extras that don't belong to one genre. To place a photo somewhere on the home page, add it to `PICKS` in `app.js` as `"<genre>/<file-name>"`, e.g. `"featured/blue-cave"`.
 2. Run:
 
    ```bash
