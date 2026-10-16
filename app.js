@@ -22,17 +22,25 @@
 
   // ---------- Home: collections ----------
   $("#totalCount").textContent = `${photos.length} photographs`;
+  const pad = (n) => String(n).padStart(2, "0");
   $("#collectionGrid").innerHTML = genres.map((g, i) => `
-    <a class="collection" href="#/${g.slug}">
-      <img src="${g.cover}" alt="" loading="lazy" />
+    <a class="collection reveal" href="#/${g.slug}">
+      <div class="ph"><img src="${g.cover}" alt="" loading="lazy" /></div>
       <div class="meta">
-        <span class="num">${String(i + 1).padStart(2, "0")}</span>
-        <div class="bottom">
-          <h3>${g.label}</h3>
-          <span class="count">${g.count} photos <span class="arrow">→</span></span>
-        </div>
+        <span class="num label">No. ${pad(i + 1)}</span>
+        <h3>${g.label}</h3>
+        <p class="dek">${g.blurb}</p>
+        <span class="count label">${g.count} photographs <span class="arrow">→</span></span>
       </div>
     </a>`).join("");
+
+  // ---------- Home: ticker of places ----------
+  // EDIT ME: places shown in the scrolling strip under the cover
+  const PLACES = ["Cappadocia", "Paris", "Istanbul", "London", "Korčula", "Budapest", "Rome",
+    "Split", "Munich", "Copenhagen", "Prague", "Vienna", "Alta Badia", "Vietri sul Mare",
+    "Nevis", "New York", "Dubrovnik", "Florence", "Versailles", "Mljet"];
+  const tickerRun = PLACES.map((p) => `<span>${p}</span><b>✦</b>`).join("");
+  $("#ticker").innerHTML = tickerRun + tickerRun;   // doubled for a seamless loop
 
   // ---------- Home: hero slideshow ----------
   const slides = $("#heroSlides");
@@ -46,11 +54,16 @@
     slides.appendChild(img);
   });
   let slide = 0, slideTimer;
+  const titleOf = Object.fromEntries(photos.map((p) => [p.src, p.title]));
+  const heroBar = $("#heroBar");
   const showSlide = (n) => {
     const imgs = slides.children;
     if (!imgs.length) return;
     imgs[slide].classList.remove("on");
     slide = (n + imgs.length) % imgs.length;
+    $("#heroTitle").textContent = titleOf[hero[slide]] || "";
+    $("#heroCount").textContent = `${pad(slide + 1)} / ${pad(imgs.length)}`;
+    heroBar.classList.remove("run"); void heroBar.offsetWidth; heroBar.classList.add("run");
     const cur = imgs[slide], next = imgs[(slide + 1) % imgs.length];
     if (!next.src) next.src = next.dataset.src;    // preload the one after
     const on = () => cur.classList.add("on");
@@ -59,6 +72,7 @@
   const startSlides = () => {
     clearInterval(slideTimer);
     slideTimer = setInterval(() => showSlide(slide + 1), 6000);
+    heroBar.classList.remove("run"); void heroBar.offsetWidth; heroBar.classList.add("run");
   };
   showSlide(0);
 
@@ -67,6 +81,37 @@
   let onHome = true;
   const updateHeader = () => header.classList.toggle("solid", !onHome || scrollY > 40);
   addEventListener("scroll", updateHeader, { passive: true });
+
+  // ---------- Scroll reveals ----------
+  // Elements with .reveal fade up as they enter the screen; ones arriving together are staggered.
+  const revealer = new IntersectionObserver((entries) => {
+    entries.filter((e) => e.isIntersecting).forEach((e, n) => {
+      e.target.style.transitionDelay = `${Math.min(n, 6) * 70}ms`;
+      e.target.classList.add("in");
+      revealer.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  function observeReveals(root) {
+    root.querySelectorAll(".reveal:not(.in)").forEach((el) => revealer.observe(el));
+  }
+  observeReveals(document);
+
+  // ---------- Parallax on collection photos ----------
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let ticking = false;
+  function parallax() {
+    ticking = false;
+    if (!onHome) return;
+    document.querySelectorAll(".collection .ph").forEach((ph) => {
+      const r = ph.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      const offset = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;   // -1..1
+      ph.firstElementChild.style.translate = `0 ${(offset * -6).toFixed(2)}%`;
+    });
+  }
+  if (!still) addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(parallax); }
+  }, { passive: true });
 
   // ---------- Genre gallery ----------
   let current = [];   // photos in the open gallery, for the lightbox
@@ -84,10 +129,10 @@
     current = photos.filter((p) => p.genre === slug);
     $("#genreTitle").textContent = g.label;
     $("#genreBlurb").textContent = g.blurb;
-    $("#genreCount").textContent = `${g.count} photographs`;
+    $("#genreCount").textContent = `No. ${pad(genres.indexOf(g) + 1)} — ${g.count} photographs`;
     const gallery = $("#gallery");
     gallery.innerHTML = current.map((p, i) => `
-      <a class="tile" href="${p.src}" data-i="${i}" style="--r:${(p.w / p.h).toFixed(4)}">
+      <a class="tile reveal" href="${p.src}" data-i="${i}" style="--r:${(p.w / p.h).toFixed(4)}">
         <i></i>
         <img data-src="${p.thumb}" alt="${p.title.replace(/"/g, "&quot;")}" />
         <span class="cap">${p.title}</span>
@@ -96,6 +141,7 @@
       img.onload = () => img.classList.add("loaded");
       io.observe(img);
     });
+    observeReveals(gallery);
 
     const idx = genres.indexOf(g);
     const prev = genres[idx - 1], next = genres[idx + 1];
@@ -129,6 +175,7 @@
     onHome = view === "home";
     onHome ? startSlides() : clearInterval(slideTimer);
     updateHeader();
+    if (onHome) requestAnimationFrame(parallax);
 
     document.title = view === "home" ? SITE
       : `${view === "genre" ? bySlug[path].label : path[0].toUpperCase() + path.slice(1)} — ${SITE}`;

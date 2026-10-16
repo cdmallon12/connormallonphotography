@@ -8,17 +8,17 @@
 <meta property="og:title" content="Connor Mallon — Photography" />
 <meta property="og:description" content="Life through my lens. Landscape, architecture, street and nature photography." />
 <meta property="og:image" content="photos/landscape/cappadocia-hot-air-balloons-1.jpg" />
-<meta name="theme-color" content="#f3f1ec" />
+<meta name="theme-color" content="#f4efe6" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- ================= HEADER / TABS ================= -->
 <header class="site-header" id="header">
-  <a class="brand" href="#/">Connor Mallon</a>
+  <a class="brand" href="#/">Connor <em>Mallon</em></a>
   <nav class="tabs" id="tabs" aria-label="Sections">
     <!-- Genre tabs are added from photos.js -->
     <a href="#/about" data-route="about">About</a>
@@ -34,17 +34,25 @@
       <div class="hero-slides" id="heroSlides"></div>
       <div class="hero-shade"></div>
       <div class="hero-text">
-        <p class="eyebrow">Photography</p>
-        <h1>Connor Mallon</h1>
+        <p class="eyebrow reveal-line"><span>Photography</span></p>
+        <h1><span class="reveal-line"><span>Connor</span></span> <span class="reveal-line"><span><em>Mallon</em></span></span></h1>
         <!-- EDIT ME: tagline -->
-        <p class="tagline">Life through my lens</p>
+        <p class="tagline reveal-line"><span>Life through my lens</span></p>
+      </div>
+      <div class="hero-caption label" aria-live="off">
+        <span id="heroTitle"></span>
+        <span class="hero-progress"><i id="heroBar"></i></span>
+        <span id="heroCount"></span>
       </div>
       <a class="scroll-cue" href="#collections" aria-label="Scroll to collections"><span></span></a>
     </div>
 
+    <!-- Ticker of places (filled from photo titles in app.js) -->
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
     <div class="wrap" id="collections">
       <div class="section-head">
-        <h2>Collections</h2>
+        <h2>The <em>Collections</em></h2>
         <p id="totalCount"></p>
       </div>
       <div class="collections" id="collectionGrid"></div>
@@ -71,7 +79,7 @@
       <div class="about-text">
         <p class="eyebrow">About</p>
         <!-- EDIT ME: bio -->
-        <h1>Hi, I'm Connor.</h1>
+        <h1>Hi, I'm <em>Connor.</em></h1>
         <p>I'm a student based in Chicago, trying to share my perspective through photography. I enjoy
            capturing everyday moments and documenting my travel around the world. My work spans
            commissioned shoots and personal projects across the country.</p>
@@ -87,7 +95,7 @@
     <div class="wrap contact">
       <div class="contact-intro">
         <p class="eyebrow">Contact</p>
-        <h1>Let's talk.</h1>
+        <h1>Let's <em>talk.</em></h1>
         <p>For prints, bookings and inquiries, send a message and I'll get back to you.</p>
       </div>
       <!-- Formspree form: messages go to the email on your Formspree account. -->
