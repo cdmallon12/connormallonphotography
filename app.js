@@ -48,7 +48,7 @@
       street: [
         "street/budapest-street-view-1", "street/budapest-street-view-2", "street/cappadocia-street-view",
         "street/copenhagen-street-view", "street/david", "street/hagia-sophia",
-        "street/istanbul-street-view-4", "street/korcula-street-view-1", "street/korcula-street-view-4",
+        "street/istanbul-street-view-4", "featured/vintage-beetle", "street/korcula-street-view-4",
         "street/musee-du-louvre-1", "street/paris-street-view-1", "street/vietri-sul-mare-street-view-1",
       ],
       nature: [

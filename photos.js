@@ -1068,6 +1068,14 @@ window.GALLERY = {
    "thumb": "photos/featured/thumb/lone-sail.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Vintage Beetle",
+   "src": "photos/featured/vintage-beetle.jpg",
+   "thumb": "photos/featured/thumb/vintage-beetle.jpg",
+   "w": 2048,
+   "h": 1365
   }
  ]
 };
