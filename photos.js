@@ -1047,14 +1047,6 @@ window.GALLERY = {
  "featured": [
   {
    "genre": "featured",
-   "title": "Bell Tower",
-   "src": "photos/featured/bell-tower.jpg",
-   "thumb": "photos/featured/thumb/bell-tower.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
    "title": "Eiffel Tower Blue Hour",
    "src": "photos/featured/eiffel-tower-blue-hour.jpg",
    "thumb": "photos/featured/thumb/eiffel-tower-blue-hour.jpg",
@@ -1084,14 +1076,6 @@ window.GALLERY = {
    "thumb": "photos/featured/thumb/night-corridor.jpg",
    "w": 2048,
    "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "One World Trade",
-   "src": "photos/featured/one-world-trade.jpg",
-   "thumb": "photos/featured/thumb/one-world-trade.jpg",
-   "w": 1365,
-   "h": 2048
   },
   {
    "genre": "featured",

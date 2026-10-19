@@ -40,10 +40,10 @@
         "landscape/palace-of-versailles", "landscape/vietri-sul-mare-2", "featured/gstaad-dog-sled",
       ],
       architecture: [
-        "architecture/hungarian-parliament", "architecture/barbican-estate-1", "featured/one-world-trade",
-        "architecture/buckingham-palace-dusk", "architecture/manhattan-bridge", "architecture/szechenyi-chain-bridge-1",
-        "architecture/rome-statuary", "architecture/barbican-estate-2", "architecture/eiffel-tower-dusk",
-        "architecture/london-cityscape-3", "architecture/split-dusk", "featured/bell-tower",
+        "architecture/arc-de-triomphe", "architecture/barbican-estate-1", "architecture/buckingham-palace-dusk",
+        "architecture/eiffel-tower-dusk", "architecture/hungarian-parliament", "architecture/kastellet-1",
+        "architecture/london-cityscape-2", "architecture/manhattan-bridge", "architecture/munich-architecture-1",
+        "architecture/rome-cityscape", "architecture/szechenyi-chain-bridge-1", "architecture/munich-architecture-2",
       ],
       street: [
         "street/istanbul-street-view-2", "street/split-street-view-3", "street/new-york-city-sunset",
