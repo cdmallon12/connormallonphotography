@@ -91,7 +91,6 @@ ul { list-style: none; }
 }
 .intro h1 { font-size: clamp(52px, 7vw, 128px); }
 .intro h1 > .reveal-line { display: block; }
-.intro-note { align-self: flex-end; margin-right: clamp(0px, 6vw, 120px); }
 
 /* Color-blocked bands */
 .band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: clamp(520px, 82vh, 860px); }
@@ -99,8 +98,8 @@ ul { list-style: none; }
 .half.block { background: var(--c); }
 .half.block .inset { position: absolute; left: 9%; top: 15%; width: 62%; bottom: 0; overflow: hidden; }
 .half.block .inset::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0) 50%); }
-.half img { width: 100%; height: 100%; object-fit: cover; scale: 1.1; transition: scale 1.4s var(--ease); }
-.half:hover img { scale: 1.15; }
+.half img { width: 100%; height: 100%; object-fit: cover; scale: 1.05; transition: scale 1.4s var(--ease); }
+.half:hover img { scale: 1.09; }
 .half.photo > img { position: absolute; inset: 0; }
 .half.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 50%); }
 .half .txt { position: absolute; z-index: 2; max-width: 300px; }
@@ -223,7 +222,6 @@ ul { list-style: none; }
 .view.active h1 .reveal-line:nth-child(1) > span { animation-delay: .15s; }
 .view.active h1 .reveal-line:nth-child(2) > span { animation-delay: .27s; }
 .view.active h1 .reveal-line:nth-child(3) > span { animation-delay: .39s; }
-.view.active .intro-note.reveal-line > span { animation-delay: .75s; }
 @keyframes lineUp { to { transform: none; } }
 
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
@@ -244,6 +242,9 @@ ul { list-style: none; }
   .intro { min-height: 70vh; }
   .band { grid-template-columns: minmax(0, 1fr); }
   .half { min-height: 120vw; }
+  /* On phones the inset is narrow, so its text sits at the bottom and leaves the sky clear */
+  .half.block .txt { top: auto; bottom: 0; right: 29%; max-width: none; }
+  .half.block .inset::after { background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 55%); }
   .recent { display: flex; flex-direction: column; gap: 24px; }
   .recent .r-big, .recent .r-small, .recent-title, .recent-note { position: static; margin: 0; width: auto; }
   .recent .r-big { width: 78%; margin-left: auto; }

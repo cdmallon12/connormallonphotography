@@ -4,13 +4,13 @@ window.GALLERY = {
   {
    "slug": "landscape",
    "label": "Landscape",
-   "blurb": "Coastlines, mountains and skylines from the road.",
+   "blurb": "Coastlines, mountains, and skylines from the road.",
    "count": 32
   },
   {
    "slug": "architecture",
    "label": "Architecture",
-   "blurb": "Bridges, palaces and the shapes cities are made of.",
+   "blurb": "Bridges, palaces, and the shapes cities are made of.",
    "count": 30
   },
   {
@@ -22,7 +22,7 @@ window.GALLERY = {
   {
    "slug": "nature",
    "label": "Nature",
-   "blurb": "Wildlife, flowers and the small things worth stopping for.",
+   "blurb": "Wildlife, flowers, and the small things worth stopping for.",
    "count": 16
   }
  ],

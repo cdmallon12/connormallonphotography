@@ -57,10 +57,10 @@ GENRE_LABELS = {"Street View": "Street"}
 
 # One-line intro shown at the top of each genre's page.
 GENRE_BLURBS = {
-    "Landscape": "Coastlines, mountains and skylines from the road.",
-    "Architecture": "Bridges, palaces and the shapes cities are made of.",
+    "Landscape": "Coastlines, mountains, and skylines from the road.",
+    "Architecture": "Bridges, palaces, and the shapes cities are made of.",
     "Street View": "Everyday moments in the streets of the places I've been.",
-    "Nature": "Wildlife, flowers and the small things worth stopping for.",
+    "Nature": "Wildlife, flowers, and the small things worth stopping for.",
 }
 
 # Extra photos for the home page collage and mosaic that don't belong to a genre tab.

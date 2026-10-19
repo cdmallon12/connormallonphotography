@@ -20,9 +20,10 @@
   // =====================================================================
   const PICKS = {
     // Home page genre bands, shown in pairs. "block" = solid color + inset photo,
-    // "photo" = photo fills its half.
+    // "photo" = photo fills its half. Optional "focus" keeps part of the photo in view
+    // when it's cropped ("x% y%" from the top-left, e.g. the moon in Alta Badia).
     bands: [
-      { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/alta-badia-5" },
+      { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/alta-badia-5", focus: "80% 12%" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
       { genre: "street",       style: "photo", image: "street/split-street-view-3" },
       { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/blue-morpho-butterfly-1" },
@@ -87,13 +88,14 @@
         <p>${g.blurb}</p>
         <span class="link-line">View gallery</span>
       </div>`;
+    const focus = b.focus ? ` style="object-position:${b.focus}"` : "";
     if (b.style === "block") {
       return `<a class="half block reveal" href="#/${g.slug}" style="--c:${b.color}">
-        <div class="inset"><img src="${(P(b.inset) || {}).thumb}" alt="" loading="lazy" /></div>${txt}
+        <div class="inset"><img src="${(P(b.inset) || {}).thumb}" alt=""${focus} loading="lazy" /></div>${txt}
       </a>`;
     }
     return `<a class="half photo reveal" href="#/${g.slug}">
-      <img src="${(P(b.image) || {}).src}" alt="" loading="lazy" />${txt}
+      <img src="${(P(b.image) || {}).src}" alt=""${focus} loading="lazy" />${txt}
     </a>`;
   };
   let bands = "";
@@ -225,7 +227,7 @@
     document.querySelectorAll(".half img").forEach((img) => {
       const r = img.parentElement.getBoundingClientRect();
       if (r.bottom < 0 || r.top > innerHeight) return;
-      img.style.translate = `0 ${(((r.top + r.height / 2) / innerHeight - 0.5) * -7).toFixed(2)}%`;
+      img.style.translate = `0 ${(((r.top + r.height / 2) / innerHeight - 0.5) * -4).toFixed(2)}%`;
     });
   }
   const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
