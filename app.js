@@ -46,11 +46,10 @@
         "architecture/rome-cityscape", "architecture/szechenyi-chain-bridge-1", "architecture/munich-architecture-2",
       ],
       street: [
-        "street/istanbul-street-view-2", "street/split-street-view-3", "street/new-york-city-sunset",
-        "street/musee-du-louvre-1", "street/supreme-deli", "featured/night-corridor",
-        "street/vienna-street-view-2", "street/korcula-street-view-4", "street/rome-street-view",
-        "featured/paris-in-mono", "street/nevis-sunset", "street/istanbul-street-view-3",
-        "street/paris-street-view-1", "street/hagia-sophia",
+        "street/budapest-street-view-1", "street/budapest-street-view-2", "street/cappadocia-street-view",
+        "street/copenhagen-street-view", "street/david", "street/hagia-sophia",
+        "street/istanbul-street-view-4", "street/korcula-street-view-1", "street/korcula-street-view-4",
+        "street/musee-du-louvre-1", "street/paris-street-view-1", "street/vietri-sul-mare-street-view-1",
       ],
       nature: [
         "nature/blue-morpho-butterfly-2", "nature/balduina-sunset", "nature/cattle-egret",

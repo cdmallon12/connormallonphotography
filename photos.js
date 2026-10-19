@@ -1068,22 +1068,6 @@ window.GALLERY = {
    "thumb": "photos/featured/thumb/lone-sail.jpg",
    "w": 1365,
    "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Night Corridor",
-   "src": "photos/featured/night-corridor.jpg",
-   "thumb": "photos/featured/thumb/night-corridor.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Paris in Mono",
-   "src": "photos/featured/paris-in-mono.jpg",
-   "thumb": "photos/featured/thumb/paris-in-mono.jpg",
-   "w": 1365,
-   "h": 2048
   }
  ]
 };
