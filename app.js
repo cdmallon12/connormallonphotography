@@ -26,7 +26,7 @@
       { genre: "landscape",    style: "block", color: "var(--accent)", inset: "landscape/alta-badia-5", focus: "80% 12%" },
       { genre: "architecture", style: "photo", image: "architecture/hungarian-parliament" },
       { genre: "street",       style: "photo", image: "street/split-street-view-3" },
-      { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/blue-morpho-butterfly-1" },
+      { genre: "nature",       style: "block", color: "var(--navy)", inset: "nature/blue-morpho-wings-closed" },
     ],
     // Home page "Selected work": one large photo with a smaller one overlapping it.
     recent: { big: "featured/lone-sail", small: "featured/eiffel-tower-blue-hour" },
@@ -34,28 +34,28 @@
     // Each genre tab shows these first, in this order (the full collection sits under "View all").
     best: {
       landscape: [
-        "landscape/alta-badia-4", "landscape/cappadocia-hot-air-balloons-1", "landscape/cappadocia-hot-air-balloons-2",
-        "landscape/cappadocia-hot-air-balloons-3", "landscape/dubrovnik-old-town", "landscape/london-skyline",
-        "landscape/munich-english-garden-1", "landscape/munich-english-garden-2", "landscape/nevis-coast-2",
-        "landscape/palace-of-versailles", "landscape/vietri-sul-mare-2", "featured/gstaad-dog-sled",
+        "landscape/deck-chairs-alta-badia", "landscape/balloons-before-dawn-cappadocia", "landscape/sunrise-watchers-goreme",
+        "landscape/balloons-over-the-valley", "landscape/fort-lovrijenac-dubrovnik", "landscape/city-of-london-skyline",
+        "landscape/bench-in-the-englischer-garten", "landscape/golden-hour-englischer-garten", "landscape/red-boat-nevis",
+        "landscape/grand-canal-versailles", "landscape/beach-day-vietri-sul-mare", "featured/gstaad-dog-sled",
       ],
       architecture: [
-        "architecture/arc-de-triomphe", "architecture/barbican-estate-1", "architecture/buckingham-palace-dusk",
-        "architecture/eiffel-tower-dusk", "architecture/hungarian-parliament", "architecture/kastellet-1",
-        "architecture/london-cityscape-2", "architecture/manhattan-bridge", "architecture/munich-architecture-1",
-        "architecture/rome-cityscape", "architecture/szechenyi-chain-bridge-1", "architecture/munich-architecture-2",
+        "architecture/arc-de-triomphe", "architecture/barbican-walkway-at-night", "architecture/victoria-memorial-at-dusk",
+        "architecture/eiffel-tower-at-dusk", "architecture/hungarian-parliament", "architecture/red-barracks-kastellet",
+        "architecture/riverside-apartments-london", "architecture/manhattan-bridge", "architecture/gabled-facade-munich",
+        "architecture/stone-pines-rome", "architecture/szechenyi-chain-bridge-1", "architecture/st-luke-s-church-munich",
       ],
       street: [
-        "street/budapest-street-view-1", "street/budapest-street-view-2", "street/cappadocia-street-view",
-        "street/copenhagen-street-view", "street/david", "street/hagia-sophia",
-        "street/istanbul-street-view-4", "featured/vintage-beetle", "street/korcula-street-view-4",
-        "street/musee-du-louvre-1", "street/paris-street-view-1", "street/vietri-sul-mare-street-view-1",
+        "street/yellow-tram-budapest", "street/carousel-at-night-vienna", "street/vintage-car-goreme",
+        "street/autumn-ivy-copenhagen", "street/michelangelo-s-david", "street/inside-hagia-sophia",
+        "street/colorful-houses-of-balat", "featured/vintage-beetle", "street/sunset-on-the-walls-korcula",
+        "street/framing-the-pyramid-louvre", "street/boulinier-latin-quarter", "street/ceramic-table-vietri-sul-mare",
       ],
       nature: [
-        "nature/blue-morpho-butterfly-1", "nature/blue-morpho-butterfly-2", "nature/cattle-egret",
-        "nature/goreme-camel", "nature/goreme-sheep", "nature/tropical-hibiscus",
-        "nature/vervet-monkey-1", "nature/vervet-monkey-golf-course", "nature/balduina-sunset",
-        "nature/tomatoes", "featured/bougainvillea-in-bloom", "nature/goreme-wild-cat",
+        "nature/blue-morpho-wings-closed", "nature/blue-morpho-on-a-leaf", "nature/cattle-egret-preening",
+        "nature/saddled-camel-goreme", "nature/flock-in-goreme", "nature/tropical-hibiscus",
+        "nature/vervet-monkey-on-a-branch", "nature/monkeys-on-the-green", "nature/stone-pine-sunset-balduina",
+        "nature/vine-tomatoes", "featured/bougainvillea-in-bloom", "nature/white-cat-goreme",
       ],
     },
   };

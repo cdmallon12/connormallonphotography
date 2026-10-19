@@ -54,18 +54,42 @@ window.GALLERY = {
   {
    "genre": "landscape",
    "title": "Alta Badia",
-   "src": "photos/landscape/alta-badia-4.jpg",
-   "thumb": "photos/landscape/thumb/alta-badia-4.jpg",
+   "src": "photos/landscape/alta-badia-5.jpg",
+   "thumb": "photos/landscape/thumb/alta-badia-5.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "landscape",
+   "title": "Balloons Before Dawn, Cappadocia",
+   "src": "photos/landscape/balloons-before-dawn-cappadocia.jpg",
+   "thumb": "photos/landscape/thumb/balloons-before-dawn-cappadocia.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "landscape",
-   "title": "Alta Badia",
-   "src": "photos/landscape/alta-badia-5.jpg",
-   "thumb": "photos/landscape/thumb/alta-badia-5.jpg",
+   "title": "Balloons Over the Valley",
+   "src": "photos/landscape/balloons-over-the-valley.jpg",
+   "thumb": "photos/landscape/thumb/balloons-over-the-valley.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "landscape",
+   "title": "Beach Day, Vietri sul Mare",
+   "src": "photos/landscape/beach-day-vietri-sul-mare.jpg",
+   "thumb": "photos/landscape/thumb/beach-day-vietri-sul-mare.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "landscape",
+   "title": "Bench in the Englischer Garten",
+   "src": "photos/landscape/bench-in-the-englischer-garten.jpg",
+   "thumb": "photos/landscape/thumb/bench-in-the-englischer-garten.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "landscape",
@@ -77,35 +101,19 @@ window.GALLERY = {
   },
   {
    "genre": "landscape",
-   "title": "Cappadocia Hot Air Balloons",
-   "src": "photos/landscape/cappadocia-hot-air-balloons-1.jpg",
-   "thumb": "photos/landscape/thumb/cappadocia-hot-air-balloons-1.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Cappadocia Hot Air Balloons",
-   "src": "photos/landscape/cappadocia-hot-air-balloons-2.jpg",
-   "thumb": "photos/landscape/thumb/cappadocia-hot-air-balloons-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Cappadocia Hot Air Balloons",
-   "src": "photos/landscape/cappadocia-hot-air-balloons-3.jpg",
-   "thumb": "photos/landscape/thumb/cappadocia-hot-air-balloons-3.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "landscape",
    "title": "Cappadocia",
    "src": "photos/landscape/cappadocia.jpg",
    "thumb": "photos/landscape/thumb/cappadocia.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "landscape",
+   "title": "City of London Skyline",
+   "src": "photos/landscape/city-of-london-skyline.jpg",
+   "thumb": "photos/landscape/thumb/city-of-london-skyline.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "landscape",
@@ -133,11 +141,11 @@ window.GALLERY = {
   },
   {
    "genre": "landscape",
-   "title": "Dubrovnik Old Town",
-   "src": "photos/landscape/dubrovnik-old-town.jpg",
-   "thumb": "photos/landscape/thumb/dubrovnik-old-town.jpg",
-   "w": 1365,
-   "h": 2048
+   "title": "Deck Chairs, Alta Badia",
+   "src": "photos/landscape/deck-chairs-alta-badia.jpg",
+   "thumb": "photos/landscape/thumb/deck-chairs-alta-badia.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "landscape",
@@ -165,6 +173,22 @@ window.GALLERY = {
   },
   {
    "genre": "landscape",
+   "title": "Fort Lovrijenac, Dubrovnik",
+   "src": "photos/landscape/fort-lovrijenac-dubrovnik.jpg",
+   "thumb": "photos/landscape/thumb/fort-lovrijenac-dubrovnik.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "landscape",
+   "title": "Golden Hour, Englischer Garten",
+   "src": "photos/landscape/golden-hour-englischer-garten.jpg",
+   "thumb": "photos/landscape/thumb/golden-hour-englischer-garten.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "landscape",
    "title": "Goreme Sunrise",
    "src": "photos/landscape/goreme-sunrise.jpg",
    "thumb": "photos/landscape/thumb/goreme-sunrise.jpg",
@@ -173,9 +197,9 @@ window.GALLERY = {
   },
   {
    "genre": "landscape",
-   "title": "London Skyline",
-   "src": "photos/landscape/london-skyline.jpg",
-   "thumb": "photos/landscape/thumb/london-skyline.jpg",
+   "title": "Grand Canal, Versailles",
+   "src": "photos/landscape/grand-canal-versailles.jpg",
+   "thumb": "photos/landscape/thumb/grand-canal-versailles.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -198,22 +222,6 @@ window.GALLERY = {
   {
    "genre": "landscape",
    "title": "Munich English Garden",
-   "src": "photos/landscape/munich-english-garden-1.jpg",
-   "thumb": "photos/landscape/thumb/munich-english-garden-1.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Munich English Garden",
-   "src": "photos/landscape/munich-english-garden-2.jpg",
-   "thumb": "photos/landscape/thumb/munich-english-garden-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Munich English Garden",
    "src": "photos/landscape/munich-english-garden-3.jpg",
    "thumb": "photos/landscape/thumb/munich-english-garden-3.jpg",
    "w": 1365,
@@ -230,24 +238,8 @@ window.GALLERY = {
   {
    "genre": "landscape",
    "title": "Nevis Coast",
-   "src": "photos/landscape/nevis-coast-2.jpg",
-   "thumb": "photos/landscape/thumb/nevis-coast-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Nevis Coast",
    "src": "photos/landscape/nevis-coast-3.jpg",
    "thumb": "photos/landscape/thumb/nevis-coast-3.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Palace of Versailles",
-   "src": "photos/landscape/palace-of-versailles.jpg",
-   "thumb": "photos/landscape/thumb/palace-of-versailles.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -256,6 +248,22 @@ window.GALLERY = {
    "title": "Prague Skyline",
    "src": "photos/landscape/prague-skyline.jpg",
    "thumb": "photos/landscape/thumb/prague-skyline.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "landscape",
+   "title": "Red Boat, Nevis",
+   "src": "photos/landscape/red-boat-nevis.jpg",
+   "thumb": "photos/landscape/thumb/red-boat-nevis.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "landscape",
+   "title": "Sunrise Watchers, Göreme",
+   "src": "photos/landscape/sunrise-watchers-goreme.jpg",
+   "thumb": "photos/landscape/thumb/sunrise-watchers-goreme.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -272,14 +280,6 @@ window.GALLERY = {
    "title": "Vietri Sul Mare",
    "src": "photos/landscape/vietri-sul-mare-1.jpg",
    "thumb": "photos/landscape/thumb/vietri-sul-mare-1.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "landscape",
-   "title": "Vietri Sul Mare",
-   "src": "photos/landscape/vietri-sul-mare-2.jpg",
-   "thumb": "photos/landscape/thumb/vietri-sul-mare-2.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -310,18 +310,18 @@ window.GALLERY = {
   {
    "genre": "architecture",
    "title": "Barbican Estate",
-   "src": "photos/architecture/barbican-estate-1.jpg",
-   "thumb": "photos/architecture/thumb/barbican-estate-1.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "architecture",
-   "title": "Barbican Estate",
    "src": "photos/architecture/barbican-estate-2.jpg",
    "thumb": "photos/architecture/thumb/barbican-estate-2.jpg",
    "w": 2048,
    "h": 1365
+  },
+  {
+   "genre": "architecture",
+   "title": "Barbican Walkway at Night",
+   "src": "photos/architecture/barbican-walkway-at-night.jpg",
+   "thumb": "photos/architecture/thumb/barbican-walkway-at-night.jpg",
+   "w": 1365,
+   "h": 2048
   },
   {
    "genre": "architecture",
@@ -333,19 +333,19 @@ window.GALLERY = {
   },
   {
    "genre": "architecture",
-   "title": "Buckingham Palace Dusk",
-   "src": "photos/architecture/buckingham-palace-dusk.jpg",
-   "thumb": "photos/architecture/thumb/buckingham-palace-dusk.jpg",
-   "w": 2048,
-   "h": 1365
+   "title": "Eiffel Tower at Dusk",
+   "src": "photos/architecture/eiffel-tower-at-dusk.jpg",
+   "thumb": "photos/architecture/thumb/eiffel-tower-at-dusk.jpg",
+   "w": 1365,
+   "h": 2048
   },
   {
    "genre": "architecture",
-   "title": "Eiffel Tower Dusk",
-   "src": "photos/architecture/eiffel-tower-dusk.jpg",
-   "thumb": "photos/architecture/thumb/eiffel-tower-dusk.jpg",
-   "w": 1365,
-   "h": 2048
+   "title": "Gabled Facade, Munich",
+   "src": "photos/architecture/gabled-facade-munich.jpg",
+   "thumb": "photos/architecture/thumb/gabled-facade-munich.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "architecture",
@@ -354,14 +354,6 @@ window.GALLERY = {
    "thumb": "photos/architecture/thumb/hungarian-parliament.jpg",
    "w": 2048,
    "h": 1365
-  },
-  {
-   "genre": "architecture",
-   "title": "Kastellet",
-   "src": "photos/architecture/kastellet-1.jpg",
-   "thumb": "photos/architecture/thumb/kastellet-1.jpg",
-   "w": 1365,
-   "h": 2048
   },
   {
    "genre": "architecture",
@@ -390,14 +382,6 @@ window.GALLERY = {
   {
    "genre": "architecture",
    "title": "London Cityscape",
-   "src": "photos/architecture/london-cityscape-2.jpg",
-   "thumb": "photos/architecture/thumb/london-cityscape-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "architecture",
-   "title": "London Cityscape",
    "src": "photos/architecture/london-cityscape-3.jpg",
    "thumb": "photos/architecture/thumb/london-cityscape-3.jpg",
    "w": 1365,
@@ -408,22 +392,6 @@ window.GALLERY = {
    "title": "Manhattan Bridge",
    "src": "photos/architecture/manhattan-bridge.jpg",
    "thumb": "photos/architecture/thumb/manhattan-bridge.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "architecture",
-   "title": "Munich Architecture",
-   "src": "photos/architecture/munich-architecture-1.jpg",
-   "thumb": "photos/architecture/thumb/munich-architecture-1.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "architecture",
-   "title": "Munich Architecture",
-   "src": "photos/architecture/munich-architecture-2.jpg",
-   "thumb": "photos/architecture/thumb/munich-architecture-2.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -469,11 +437,19 @@ window.GALLERY = {
   },
   {
    "genre": "architecture",
-   "title": "Rome Cityscape",
-   "src": "photos/architecture/rome-cityscape.jpg",
-   "thumb": "photos/architecture/thumb/rome-cityscape.jpg",
+   "title": "Red Barracks, Kastellet",
+   "src": "photos/architecture/red-barracks-kastellet.jpg",
+   "thumb": "photos/architecture/thumb/red-barracks-kastellet.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "architecture",
+   "title": "Riverside Apartments, London",
+   "src": "photos/architecture/riverside-apartments-london.jpg",
+   "thumb": "photos/architecture/thumb/riverside-apartments-london.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "architecture",
@@ -509,6 +485,22 @@ window.GALLERY = {
   },
   {
    "genre": "architecture",
+   "title": "St. Luke's Church, Munich",
+   "src": "photos/architecture/st-luke-s-church-munich.jpg",
+   "thumb": "photos/architecture/thumb/st-luke-s-church-munich.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "architecture",
+   "title": "Stone Pines, Rome",
+   "src": "photos/architecture/stone-pines-rome.jpg",
+   "thumb": "photos/architecture/thumb/stone-pines-rome.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "architecture",
    "title": "Széchenyi Chain Bridge",
    "src": "photos/architecture/szechenyi-chain-bridge-1.jpg",
    "thumb": "photos/architecture/thumb/szechenyi-chain-bridge-1.jpg",
@@ -520,6 +512,14 @@ window.GALLERY = {
    "title": "Tower Bridge",
    "src": "photos/architecture/tower-bridge.jpg",
    "thumb": "photos/architecture/thumb/tower-bridge.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "architecture",
+   "title": "Victoria Memorial at Dusk",
+   "src": "photos/architecture/victoria-memorial-at-dusk.jpg",
+   "thumb": "photos/architecture/thumb/victoria-memorial-at-dusk.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -541,6 +541,14 @@ window.GALLERY = {
   },
   {
    "genre": "street",
+   "title": "Autumn Ivy, Copenhagen",
+   "src": "photos/street/autumn-ivy-copenhagen.jpg",
+   "thumb": "photos/street/thumb/autumn-ivy-copenhagen.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "street",
    "title": "Bananas",
    "src": "photos/street/bananas-2.jpg",
    "thumb": "photos/street/thumb/bananas-2.jpg",
@@ -557,6 +565,14 @@ window.GALLERY = {
   },
   {
    "genre": "street",
+   "title": "Boulinier, Latin Quarter",
+   "src": "photos/street/boulinier-latin-quarter.jpg",
+   "thumb": "photos/street/thumb/boulinier-latin-quarter.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "street",
    "title": "Brooklyn Heights",
    "src": "photos/street/brooklyn-heights.jpg",
    "thumb": "photos/street/thumb/brooklyn-heights.jpg",
@@ -565,25 +581,9 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Budapest Street View",
-   "src": "photos/street/budapest-street-view-1.jpg",
-   "thumb": "photos/street/thumb/budapest-street-view-1.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "street",
-   "title": "Budapest Street View",
-   "src": "photos/street/budapest-street-view-2.jpg",
-   "thumb": "photos/street/thumb/budapest-street-view-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "street",
-   "title": "Cappadocia Street View",
-   "src": "photos/street/cappadocia-street-view.jpg",
-   "thumb": "photos/street/thumb/cappadocia-street-view.jpg",
+   "title": "Carousel at Night, Vienna",
+   "src": "photos/street/carousel-at-night-vienna.jpg",
+   "thumb": "photos/street/thumb/carousel-at-night-vienna.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -597,25 +597,33 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Copenhagen Street View",
-   "src": "photos/street/copenhagen-street-view.jpg",
-   "thumb": "photos/street/thumb/copenhagen-street-view.jpg",
+   "title": "Ceramic Table, Vietri sul Mare",
+   "src": "photos/street/ceramic-table-vietri-sul-mare.jpg",
+   "thumb": "photos/street/thumb/ceramic-table-vietri-sul-mare.jpg",
    "w": 1365,
    "h": 2048
   },
   {
    "genre": "street",
-   "title": "David",
-   "src": "photos/street/david.jpg",
-   "thumb": "photos/street/thumb/david.jpg",
+   "title": "Colorful Houses of Balat",
+   "src": "photos/street/colorful-houses-of-balat.jpg",
+   "thumb": "photos/street/thumb/colorful-houses-of-balat.jpg",
    "w": 1365,
    "h": 2048
   },
   {
    "genre": "street",
-   "title": "Hagia Sophia",
-   "src": "photos/street/hagia-sophia.jpg",
-   "thumb": "photos/street/thumb/hagia-sophia.jpg",
+   "title": "Framing the Pyramid, Louvre",
+   "src": "photos/street/framing-the-pyramid-louvre.jpg",
+   "thumb": "photos/street/thumb/framing-the-pyramid-louvre.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "street",
+   "title": "Inside Hagia Sophia",
+   "src": "photos/street/inside-hagia-sophia.jpg",
+   "thumb": "photos/street/thumb/inside-hagia-sophia.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -640,14 +648,6 @@ window.GALLERY = {
    "title": "Istanbul Street View",
    "src": "photos/street/istanbul-street-view-3.jpg",
    "thumb": "photos/street/thumb/istanbul-street-view-3.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "street",
-   "title": "Istanbul Street View",
-   "src": "photos/street/istanbul-street-view-4.jpg",
-   "thumb": "photos/street/thumb/istanbul-street-view-4.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -685,9 +685,9 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Korčula Street View",
-   "src": "photos/street/korcula-street-view-4.jpg",
-   "thumb": "photos/street/thumb/korcula-street-view-4.jpg",
+   "title": "Lions of the Chain Bridge",
+   "src": "photos/street/lions-of-the-chain-bridge.jpg",
+   "thumb": "photos/street/thumb/lions-of-the-chain-bridge.jpg",
    "w": 2048,
    "h": 1365
   },
@@ -717,9 +717,9 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Musée du Louvre",
-   "src": "photos/street/musee-du-louvre-1.jpg",
-   "thumb": "photos/street/thumb/musee-du-louvre-1.jpg",
+   "title": "Michelangelo's David",
+   "src": "photos/street/michelangelo-s-david.jpg",
+   "thumb": "photos/street/thumb/michelangelo-s-david.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -746,14 +746,6 @@ window.GALLERY = {
    "thumb": "photos/street/thumb/new-york-city-sunset.jpg",
    "w": 1365,
    "h": 2048
-  },
-  {
-   "genre": "street",
-   "title": "Paris Street View",
-   "src": "photos/street/paris-street-view-1.jpg",
-   "thumb": "photos/street/thumb/paris-street-view-1.jpg",
-   "w": 2048,
-   "h": 1365
   },
   {
    "genre": "street",
@@ -821,6 +813,14 @@ window.GALLERY = {
   },
   {
    "genre": "street",
+   "title": "Sunset on the Walls, Korčula",
+   "src": "photos/street/sunset-on-the-walls-korcula.jpg",
+   "thumb": "photos/street/thumb/sunset-on-the-walls-korcula.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "street",
    "title": "Supreme Deli",
    "src": "photos/street/supreme-deli.jpg",
    "thumb": "photos/street/thumb/supreme-deli.jpg",
@@ -869,22 +869,6 @@ window.GALLERY = {
   },
   {
    "genre": "street",
-   "title": "Vienna Street View",
-   "src": "photos/street/vienna-street-view-2.jpg",
-   "thumb": "photos/street/thumb/vienna-street-view-2.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "street",
-   "title": "Vietri Sul Mare Street View",
-   "src": "photos/street/vietri-sul-mare-street-view-1.jpg",
-   "thumb": "photos/street/thumb/vietri-sul-mare-street-view-1.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "street",
    "title": "Vietri Sul Mare Street View",
    "src": "photos/street/vietri-sul-mare-street-view-2.jpg",
    "thumb": "photos/street/thumb/vietri-sul-mare-street-view-2.jpg",
@@ -909,9 +893,25 @@ window.GALLERY = {
   },
   {
    "genre": "street",
+   "title": "Vintage Car, Göreme",
+   "src": "photos/street/vintage-car-goreme.jpg",
+   "thumb": "photos/street/thumb/vintage-car-goreme.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "street",
    "title": "West Village",
    "src": "photos/street/west-village.jpg",
    "thumb": "photos/street/thumb/west-village.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "street",
+   "title": "Yellow Tram, Budapest",
+   "src": "photos/street/yellow-tram-budapest.jpg",
+   "thumb": "photos/street/thumb/yellow-tram-budapest.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -925,57 +925,41 @@ window.GALLERY = {
   },
   {
    "genre": "nature",
-   "title": "Balduina Sunset",
-   "src": "photos/nature/balduina-sunset.jpg",
-   "thumb": "photos/nature/thumb/balduina-sunset.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "nature",
-   "title": "Blue Morpho Butterfly",
-   "src": "photos/nature/blue-morpho-butterfly-1.jpg",
-   "thumb": "photos/nature/thumb/blue-morpho-butterfly-1.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "nature",
-   "title": "Blue Morpho Butterfly",
-   "src": "photos/nature/blue-morpho-butterfly-2.jpg",
-   "thumb": "photos/nature/thumb/blue-morpho-butterfly-2.jpg",
+   "title": "Blue Morpho on a Leaf",
+   "src": "photos/nature/blue-morpho-on-a-leaf.jpg",
+   "thumb": "photos/nature/thumb/blue-morpho-on-a-leaf.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "nature",
-   "title": "Cattle Egret",
-   "src": "photos/nature/cattle-egret.jpg",
-   "thumb": "photos/nature/thumb/cattle-egret.jpg",
+   "title": "Blue Morpho, Wings Closed",
+   "src": "photos/nature/blue-morpho-wings-closed.jpg",
+   "thumb": "photos/nature/thumb/blue-morpho-wings-closed.jpg",
    "w": 1365,
    "h": 2048
   },
   {
    "genre": "nature",
-   "title": "Goreme Camel",
-   "src": "photos/nature/goreme-camel.jpg",
-   "thumb": "photos/nature/thumb/goreme-camel.jpg",
+   "title": "Cattle Egret Preening",
+   "src": "photos/nature/cattle-egret-preening.jpg",
+   "thumb": "photos/nature/thumb/cattle-egret-preening.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "nature",
+   "title": "Flock in Göreme",
+   "src": "photos/nature/flock-in-goreme.jpg",
+   "thumb": "photos/nature/thumb/flock-in-goreme.jpg",
    "w": 2048,
    "h": 1365
   },
   {
    "genre": "nature",
-   "title": "Goreme Sheep",
-   "src": "photos/nature/goreme-sheep.jpg",
-   "thumb": "photos/nature/thumb/goreme-sheep.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "nature",
-   "title": "Goreme Wild Cat",
-   "src": "photos/nature/goreme-wild-cat.jpg",
-   "thumb": "photos/nature/thumb/goreme-wild-cat.jpg",
+   "title": "Monkeys on the Green",
+   "src": "photos/nature/monkeys-on-the-green.jpg",
+   "thumb": "photos/nature/thumb/monkeys-on-the-green.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -997,9 +981,17 @@ window.GALLERY = {
   },
   {
    "genre": "nature",
-   "title": "Tomatoes",
-   "src": "photos/nature/tomatoes.jpg",
-   "thumb": "photos/nature/thumb/tomatoes.jpg",
+   "title": "Saddled Camel, Göreme",
+   "src": "photos/nature/saddled-camel-goreme.jpg",
+   "thumb": "photos/nature/thumb/saddled-camel-goreme.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "nature",
+   "title": "Stone Pine Sunset, Balduina",
+   "src": "photos/nature/stone-pine-sunset-balduina.jpg",
+   "thumb": "photos/nature/thumb/stone-pine-sunset-balduina.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -1014,14 +1006,6 @@ window.GALLERY = {
   {
    "genre": "nature",
    "title": "Vervet Monkey",
-   "src": "photos/nature/vervet-monkey-1.jpg",
-   "thumb": "photos/nature/thumb/vervet-monkey-1.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "nature",
-   "title": "Vervet Monkey",
    "src": "photos/nature/vervet-monkey-2.jpg",
    "thumb": "photos/nature/thumb/vervet-monkey-2.jpg",
    "w": 2048,
@@ -1029,9 +1013,9 @@ window.GALLERY = {
   },
   {
    "genre": "nature",
-   "title": "Vervet Monkey Golf Course",
-   "src": "photos/nature/vervet-monkey-golf-course.jpg",
-   "thumb": "photos/nature/thumb/vervet-monkey-golf-course.jpg",
+   "title": "Vervet Monkey on a Branch",
+   "src": "photos/nature/vervet-monkey-on-a-branch.jpg",
+   "thumb": "photos/nature/thumb/vervet-monkey-on-a-branch.jpg",
    "w": 1365,
    "h": 2048
   },
@@ -1040,6 +1024,22 @@ window.GALLERY = {
    "title": "Vietri Sul Mare",
    "src": "photos/nature/vietri-sul-mare-3.jpg",
    "thumb": "photos/nature/thumb/vietri-sul-mare-3.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "nature",
+   "title": "Vine Tomatoes",
+   "src": "photos/nature/vine-tomatoes.jpg",
+   "thumb": "photos/nature/thumb/vine-tomatoes.jpg",
+   "w": 1365,
+   "h": 2048
+  },
+  {
+   "genre": "nature",
+   "title": "White Cat, Göreme",
+   "src": "photos/nature/white-cat-goreme.jpg",
+   "thumb": "photos/nature/thumb/white-cat-goreme.jpg",
    "w": 1365,
    "h": 2048
   }
