@@ -34,10 +34,10 @@
     // Each genre tab shows these first, in this order (the full collection sits under "View all").
     best: {
       landscape: [
-        "landscape/cappadocia-hot-air-balloons-1", "landscape/alta-badia-5", "landscape/goreme-sunrise",
-        "featured/blue-cave-glow", "landscape/dubrovnik-old-town", "landscape/cappadocia-hot-air-balloons-2",
-        "landscape/vietri-sul-mare-1", "landscape/alta-badia-4", "featured/sea-cliffs",
-        "landscape/fairy-chimneys", "landscape/florence-dusk", "featured/sailboat",
+        "landscape/alta-badia-4", "landscape/cappadocia-hot-air-balloons-1", "landscape/cappadocia-hot-air-balloons-2",
+        "landscape/cappadocia-hot-air-balloons-3", "landscape/dubrovnik-old-town", "landscape/london-skyline",
+        "landscape/munich-english-garden-1", "landscape/munich-english-garden-2", "landscape/nevis-coast-2",
+        "landscape/palace-of-versailles", "landscape/vietri-sul-mare-2", "featured/gstaad-dog-sled",
       ],
       architecture: [
         "architecture/hungarian-parliament", "architecture/barbican-estate-1", "featured/one-world-trade",

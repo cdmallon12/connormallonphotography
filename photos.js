@@ -1055,19 +1055,19 @@ window.GALLERY = {
   },
   {
    "genre": "featured",
-   "title": "Blue Cave Glow",
-   "src": "photos/featured/blue-cave-glow.jpg",
-   "thumb": "photos/featured/thumb/blue-cave-glow.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
    "title": "Eiffel Tower Blue Hour",
    "src": "photos/featured/eiffel-tower-blue-hour.jpg",
    "thumb": "photos/featured/thumb/eiffel-tower-blue-hour.jpg",
    "w": 1365,
    "h": 2048
+  },
+  {
+   "genre": "featured",
+   "title": "Gstaad Dog Sled",
+   "src": "photos/featured/gstaad-dog-sled.jpg",
+   "thumb": "photos/featured/thumb/gstaad-dog-sled.jpg",
+   "w": 2048,
+   "h": 1365
   },
   {
    "genre": "featured",
@@ -1098,22 +1098,6 @@ window.GALLERY = {
    "title": "Paris in Mono",
    "src": "photos/featured/paris-in-mono.jpg",
    "thumb": "photos/featured/thumb/paris-in-mono.jpg",
-   "w": 1365,
-   "h": 2048
-  },
-  {
-   "genre": "featured",
-   "title": "Sailboat",
-   "src": "photos/featured/sailboat.jpg",
-   "thumb": "photos/featured/thumb/sailboat.jpg",
-   "w": 2048,
-   "h": 1365
-  },
-  {
-   "genre": "featured",
-   "title": "Sea Cliffs",
-   "src": "photos/featured/sea-cliffs.jpg",
-   "thumb": "photos/featured/thumb/sea-cliffs.jpg",
    "w": 1365,
    "h": 2048
   }
