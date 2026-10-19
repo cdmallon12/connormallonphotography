@@ -52,10 +52,10 @@
         "street/musee-du-louvre-1", "street/paris-street-view-1", "street/vietri-sul-mare-street-view-1",
       ],
       nature: [
-        "nature/blue-morpho-butterfly-2", "nature/balduina-sunset", "nature/cattle-egret",
-        "nature/goreme-camel", "nature/blue-morpho-butterfly-1", "nature/peaches",
-        "nature/tropical-hibiscus", "nature/vervet-monkey-1", "nature/purple-queen-bougainvillea",
-        "nature/balduina-dusk",
+        "nature/blue-morpho-butterfly-1", "nature/blue-morpho-butterfly-2", "nature/cattle-egret",
+        "nature/goreme-camel", "nature/goreme-sheep", "nature/tropical-hibiscus",
+        "nature/vervet-monkey-1", "nature/vervet-monkey-golf-course", "nature/balduina-sunset",
+        "nature/tomatoes", "featured/bougainvillea-in-bloom", "nature/goreme-wild-cat",
       ],
     },
   };

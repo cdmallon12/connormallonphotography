@@ -1047,6 +1047,14 @@ window.GALLERY = {
  "featured": [
   {
    "genre": "featured",
+   "title": "Bougainvillea in Bloom",
+   "src": "photos/featured/bougainvillea-in-bloom.jpg",
+   "thumb": "photos/featured/thumb/bougainvillea-in-bloom.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "genre": "featured",
    "title": "Eiffel Tower Blue Hour",
    "src": "photos/featured/eiffel-tower-blue-hour.jpg",
    "thumb": "photos/featured/thumb/eiffel-tower-blue-hour.jpg",
